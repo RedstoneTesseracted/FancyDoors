@@ -8,4 +8,5 @@ advancement revoke @s only fdoors:hidden/use_crossbow_tool
 execute as @e[type=minecraft:arrow,tag=!fdoors.selector_arrow,nbt={item:{components:{"minecraft:custom_data":{fdoors:{selector_arrow:1b}}}}}] run function fdoors:tool/configure_spawned_arrow
 
 # Run item modifier
-item modify entity @s weapon fdoors:recharge_crossbow_tool
+execute if items entity @s weapon.mainhand minecraft:crossbow[minecraft:custom_data~{fdoors:{tool:1b}}] run item modify entity @s weapon.mainhand fdoors:recharge_crossbow_tool
+execute if items entity @s weapon.offhand minecraft:crossbow[minecraft:custom_data~{fdoors:{tool:1b}}] run item modify entity @s weapon.offhand fdoors:recharge_crossbow_tool

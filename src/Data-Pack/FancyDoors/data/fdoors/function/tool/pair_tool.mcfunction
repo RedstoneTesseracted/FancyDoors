@@ -19,7 +19,7 @@ execute store result storage fdoors:utility uuid[3] int 1 run scoreboard players
 #execute as @e[tag=fdoors.door.context] run tellraw @a [{"score": {"name": "@s", "objective": "fdoors.owner_uuid1"}}, {"text": ", "}, {"score": {"name": "@s", "objective": "fdoors.owner_uuid2"}}, {"text": ", "}, {"score": {"name": "@s", "objective": "fdoors.owner_uuid3"}}, {"text": ", "}, {"score": {"name": "@s", "objective": "fdoors.owner_uuid4"}}]
 
 # Apply item modifier to held crossbow
-item modify entity @s weapon fdoors:pair_crossbow_tool
+execute if items entity @s weapon.mainhand minecraft:crossbow[minecraft:custom_data~{fdoors:{tool:1b}}] run item modify entity @s weapon.mainhand fdoors:pair_crossbow_tool
 
 # Show text and play sound
 title @a actionbar {"translate": "fdoors.message.start_pairing", "fallback": "Started pairing!", "color": "green"}

@@ -3,7 +3,7 @@
     "entity": "this",
     "predicate": {
         "slots": {
-            "weapon": {
+            "weapon.*": {
                 "predicates": {
                     "minecraft:custom_data": "{fdoors:{tool:1b}}"
                 }

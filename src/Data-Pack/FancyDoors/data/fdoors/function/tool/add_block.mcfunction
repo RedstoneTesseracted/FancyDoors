@@ -20,6 +20,10 @@ if score @s fdoors.uuid4 = fdoors.uuid4 fdoors.local run tag @s add fdoors.door.
 execute unless entity @e[tag=fdoors.door.context] run function fdoors:tool/on_paired_missing
 execute unless entity @e[tag=fdoors.door.context] run return fail
 
+# Show error and return early if the paired entity is too far away
+execute unless entity @e[tag=fdoors.door.context,distance=..8] run function fdoors:tool/on_paired_too_far
+execute unless entity @e[tag=fdoors.door.context,distance=..8] run return fail
+
 
 # Get position of paired door entity
 execute store result score fdoors.base.x fdoors.local run data get entity @e[tag=fdoors.door.base,tag=fdoors.door.context,limit=1] Pos[0]
