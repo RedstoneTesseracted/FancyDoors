@@ -56,13 +56,17 @@ scoreboard players operation fdoors.arrow.y fdoors.local -= fdoors.base.y fdoors
 scoreboard players operation fdoors.arrow.z fdoors.local -= fdoors.base.z fdoors.local
 
 
+# Build new configuration tag
+data modify storage fdoors:utility new_block set value {x:0, y:0, z:0, Name: "", Properties: {}}
+data modify storage fdoors:utility new_block.Name set from entity @s inBlockState.Name
+data modify storage fdoors:utility new_block.Properties set from entity @s inBlockState.Properties
+execute store result storage fdoors:utility new_block.x int 1 run scoreboard players get fdoors.arrow.x fdoors.local
+execute store result storage fdoors:utility new_block.y int 1 run scoreboard players get fdoors.arrow.y fdoors.local
+execute store result storage fdoors:utility new_block.z int 1 run scoreboard players get fdoors.arrow.z fdoors.local
 
-# Summon and configure the new block display
-execute at @e[tag=fdoors.door.context,limit=1] align xyz summon minecraft:block_display run function fdoors:tool/__add_block
-data modify entity @e[type=minecraft:block_display,tag=fdoors.configuration_display.new,limit=1] block_state.Name set from entity @s inBlockState.Name
-data modify entity @e[type=minecraft:block_display,tag=fdoors.configuration_display.new,limit=1] block_state.Properties set from entity @s inBlockState.Properties
-tag @e[type=minecraft:block_display,tag=fdoors.configuration_display.new,limit=1] remove fdoors.configuration_display.new
-
+# Hand the new block over to the door for handling
+execute as @e[tag=fdoors.door.context,limit=1] at @s run function fdoors:door/add_block
+data remove storage fdoors:utility new_block
 
 
 # Destroy this arrow immediately

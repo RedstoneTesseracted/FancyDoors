@@ -11,6 +11,10 @@ scoreboard objectives add fdoors.uuid2 dummy
 scoreboard objectives add fdoors.uuid3 dummy
 scoreboard objectives add fdoors.uuid4 dummy
 
+scoreboard objectives add fdoors.translation.x dummy
+scoreboard objectives add fdoors.translation.y dummy
+scoreboard objectives add fdoors.translation.z dummy
+
 scoreboard objectives add fdoors.local dummy
 
 # Forcibly reset advancement triggers
