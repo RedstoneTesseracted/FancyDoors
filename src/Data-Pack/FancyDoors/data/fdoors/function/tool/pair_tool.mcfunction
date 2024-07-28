@@ -28,9 +28,10 @@ run tag @s add fdoors.door.base.context
 # Set door owner if not set already
 execute unless data entity @e[tag=fdoors.door.base.context,limit=1] data.owner_uuid run data modify entity @e[tag=fdoors.door.base.context,limit=1] data.owner_uuid set from entity @s UUID
 
-# Reject if player does not own door
+# Reject if player does not own door... unless that player is in creative
 data modify storage fdoors:utility compare set from entity @e[tag=fdoors.door.base.context,limit=1] data.owner_uuid
 execute store result score fdoors.is_not_equal fdoors.local run data modify storage fdoors:utility compare set from entity @s UUID
+execute if entity @s[gamemode=creative] run scoreboard players set fdoors.is_not_equal fdoors.local 0
 data remove storage fdoors:utility compare
 execute unless score fdoors.is_not_equal fdoors.local matches 0 run title @a actionbar {"translate": "fdoors.message.start_pairing.wrong_owner", "fallback": "You do not own this door", "color": "red"}
 
