@@ -1,5 +1,5 @@
 # Handles configuration of a newly spawned block display
-# Called from fdoors:door/show_block
+# Called from fdoors:door/configure/show_block
 
 # Set tags
 tag @s add fdoors.door.configuration_display

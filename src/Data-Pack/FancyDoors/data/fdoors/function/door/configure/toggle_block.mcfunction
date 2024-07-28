@@ -23,13 +23,8 @@ execute store result score fdoors.block_exists fdoors.local run function fdoors:
 function fdoors:door/configure/remove_block_at with storage fdoors:utility new_block
 
 # Add block unless it existed prior
-execute unless score fdoors.block_exists fdoors.local matches 1 run data modify entity @s data.blocks append from storage fdoors:utility new_block
+execute unless score fdoors.block_exists fdoors.local matches 1 run function fdoors:door/configure/add_block
 
-# Visually show block if we're in configuration mode
-data modify storage fdoors:utility show_block set from storage fdoors:utility new_block
-execute unless score fdoors.block_exists fdoors.local matches 1 if entity @s[tag=fdoors.door.configure_ready] run function fdoors:door/configure/show_preview_block
-
-# Clean up temporary variables/storage
+# Clean up temporary variable
 scoreboard players reset fdoors.block_exists fdoors.local
-data remove storage fdoors:utility show_block
 
