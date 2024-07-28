@@ -17,17 +17,17 @@
 
 # Determine if the exact block already existed
 # This will determine whether the block should be added back later
-execute store result score fdoors.block_exists fdoors.local run function fdoors:door/check_block_exists with storage fdoors:utility new_block
+execute store result score fdoors.block_exists fdoors.local run function fdoors:door/configure/check_block_exists with storage fdoors:utility new_block
 
 # Remove any existing block at position
-function fdoors:door/remove_block_at with storage fdoors:utility new_block
+function fdoors:door/configure/remove_block_at with storage fdoors:utility new_block
 
 # Add block unless it existed prior
 execute unless score fdoors.block_exists fdoors.local matches 1 run data modify entity @s data.blocks append from storage fdoors:utility new_block
 
 # Visually show block if we're in configuration mode
 data modify storage fdoors:utility show_block set from storage fdoors:utility new_block
-execute unless score fdoors.block_exists fdoors.local matches 1 if entity @s[tag=fdoors.door.configure_ready] run function fdoors:door/show_block
+execute unless score fdoors.block_exists fdoors.local matches 1 if entity @s[tag=fdoors.door.configure_ready] run function fdoors:door/configure/show_preview_block
 
 # Clean up temporary variables/storage
 scoreboard players reset fdoors.block_exists fdoors.local

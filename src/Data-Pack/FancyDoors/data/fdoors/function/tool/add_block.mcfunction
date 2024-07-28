@@ -65,7 +65,7 @@ execute store result storage fdoors:utility new_block.y int 1 run scoreboard pla
 execute store result storage fdoors:utility new_block.z int 1 run scoreboard players get fdoors.arrow.z fdoors.local
 
 # Hand the new block over to the door for handling
-execute as @e[tag=fdoors.door.context,limit=1] at @s run function fdoors:door/add_block
+execute as @e[tag=fdoors.door.context,limit=1] at @s run function fdoors:door/configure/toggle_block
 data remove storage fdoors:utility new_block
 
 

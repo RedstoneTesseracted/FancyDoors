@@ -6,4 +6,4 @@ execute store result score fdoors.uuid1 fdoors.local run data get entity @s UUID
 execute store result score fdoors.uuid2 fdoors.local run data get entity @s UUID[1]
 execute store result score fdoors.uuid3 fdoors.local run data get entity @s UUID[2]
 execute store result score fdoors.uuid4 fdoors.local run data get entity @s UUID[3]
-execute align xyz summon minecraft:block_display run function fdoors:door/__show_block
+execute align xyz positioned ~-0.005 ~-0.005 ~-0.005 summon minecraft:block_display run function fdoors:door/configure/__show_preview_block
