@@ -2,7 +2,7 @@
 # Called from fdoors:door/show_block
 
 # Set tags
-tag @s add fdoors.door.configuration_display
+tag @s add fdoors.door.visual_block
 
 # Set NBT data
 data merge entity @s {teleport_duration:59,interpolation_duration:100}
