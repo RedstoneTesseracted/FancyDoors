@@ -11,5 +11,8 @@ execute store result score @e[type=minecraft:interaction,tag=fdoors.door.configu
 execute store result score @e[type=minecraft:interaction,tag=fdoors.door.configure_interaction.new] fdoors.owner_uuid3 run data get entity @s UUID[2]
 execute store result score @e[type=minecraft:interaction,tag=fdoors.door.configure_interaction.new] fdoors.owner_uuid4 run data get entity @s UUID[3]
 
+# Summon the preview
+function fdoors:door/summon_preview
+
 # Clear the new interaction entity tags
 tag @e[tag=fdoors.door.configure_interaction.new] remove fdoors.door.configure_interaction.new
