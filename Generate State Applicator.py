@@ -17,6 +17,9 @@ url = r'https://raw.githubusercontent.com/misode/mcmeta/summary/blocks/data.json
 with request.urlopen(url) as f:
     data = json.load(f)
 
+if len(data) == 0:
+    raise Exception("An unknown error occurred that caused the collected data tag to be zero-length!")
+
 # Extract just the block state names as well as many times they appear
 block_states = set()
 for states, _ in data.values():
