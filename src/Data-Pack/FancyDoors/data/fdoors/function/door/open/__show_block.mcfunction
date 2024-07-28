@@ -5,7 +5,7 @@
 tag @s add fdoors.door.visual_block
 
 # Set NBT data
-data merge entity @s {teleport_duration:59,interpolation_duration:100}
+data merge entity @s {interpolation_duration:1}
 
 # Set translation
 data modify storage fdoors:utility xyz set value [0, 0, 0]

@@ -15,6 +15,11 @@ scoreboard objectives add fdoors.translation.x dummy
 scoreboard objectives add fdoors.translation.y dummy
 scoreboard objectives add fdoors.translation.z dummy
 
+scoreboard objectives add fdoors.animation.tick dummy
+scoreboard objectives add fdoors.animation.duration dummy
+scoreboard objectives add fdoors.animation.delta dummy
+scoreboard objectives add fdoors.animation.old_delta dummy
+
 scoreboard objectives add fdoors.local dummy
 
 # Forcibly reset advancement triggers
