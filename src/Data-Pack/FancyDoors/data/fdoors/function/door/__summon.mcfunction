@@ -11,4 +11,8 @@ execute store result score @s fdoors.uuid3 run data get entity @s UUID[2]
 execute store result score @s fdoors.uuid4 run data get entity @s UUID[3]
 
 # Modify NBT
-data modify entity @s data set value {blocks:[]}
+# Allowed trigger types:
+#    range - triggers when entity on ACL list is within a given range (params: range [int])
+#    predicate - triggers when a custom predicate is filled (params: predicate [str])
+#    
+data modify entity @s data set value {blocks:[], tigger: "range", trigger_args: {acl: [], min: 0, max: 8}}
