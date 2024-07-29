@@ -19,8 +19,6 @@ execute if score @s fdoors.animation.delta matches -1 unless score @s fdoors.ani
 # Update animation
 function fdoors:door/animate/tick
 
-#title @a actionbar [{"text":"Delta: "},{"score": {"name": "@s", "objective": "fdoors.animation.delta"}},{"text":" | Old Delta: "},{"score": {"name": "@s", "objective": "fdoors.animation.old_delta"}},{"text":" | Tick: "},{"score": {"name": "@s", "objective": "fdoors.animation.tick"}}]
-
 # Begin opening if applicable
 execute if score @s fdoors.animation.delta matches 1 if score @s fdoors.animation.tick matches 0 run function fdoors:door/open/begin_open
 # Finish closing if applicable
@@ -28,8 +26,3 @@ execute if score @s fdoors.animation.old_delta matches -1 unless score @s fdoors
 
 # Show particles on the interaction entity when in configuration mode
 execute if entity @s[tag=fdoors.door.configure_ready] positioned ~-0.5 ~ ~-0.5 run function fdoors:door/configure/show_outline
-
-# Update "was opening" state tag
-tag @s remove fdoors.door.was_opening
-tag @s[tag=fdoors.door.opening] add fdoors.door.was_opening
-
