@@ -8,5 +8,4 @@ scoreboard players operation @s fdoors.animation.tick += @s fdoors.animation.del
 execute unless score @s fdoors.animation.delta = @s fdoors.animation.old_delta run function fdoors:door/animate/sounds
 
 # Update block display transformations if applicable
-#execute if function fdoors:door/animate/check_do_display_update run function fdoors:door/animate/update_displays
 execute if predicate fdoors:do_update_block_displays run function fdoors:door/animate/update_displays
