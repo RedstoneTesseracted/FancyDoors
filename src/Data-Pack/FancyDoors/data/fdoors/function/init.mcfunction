@@ -15,6 +15,10 @@ scoreboard objectives add fdoors.translation.x dummy
 scoreboard objectives add fdoors.translation.y dummy
 scoreboard objectives add fdoors.translation.z dummy
 
+scoreboard objectives add fdoors.last_motion.x dummy
+scoreboard objectives add fdoors.last_motion.y dummy
+scoreboard objectives add fdoors.last_motion.z dummy
+
 scoreboard objectives add fdoors.animation.tick dummy
 scoreboard objectives add fdoors.animation.duration dummy
 scoreboard objectives add fdoors.animation.delta dummy

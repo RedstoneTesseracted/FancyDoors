@@ -36,13 +36,9 @@ execute store result score fdoors.arrow.x fdoors.local run data get entity @s Po
 execute store result score fdoors.arrow.y fdoors.local run data get entity @s Pos[1] 10.0
 execute store result score fdoors.arrow.z fdoors.local run data get entity @s Pos[2] 10.0
 
-execute store result score fdoors.arrow.mx fdoors.local run data get entity @s Motion[0]
-execute store result score fdoors.arrow.my fdoors.local run data get entity @s Motion[1]
-execute store result score fdoors.arrow.mz fdoors.local run data get entity @s Motion[2]
-
-scoreboard players operation fdoors.arrow.x fdoors.local += fdoors.arrow.mx fdoors.local
-scoreboard players operation fdoors.arrow.y fdoors.local += fdoors.arrow.my fdoors.local
-scoreboard players operation fdoors.arrow.z fdoors.local += fdoors.arrow.mz fdoors.local
+scoreboard players operation fdoors.arrow.x fdoors.local += @s fdoors.last_motion.x
+scoreboard players operation fdoors.arrow.y fdoors.local += @s fdoors.last_motion.y
+scoreboard players operation fdoors.arrow.z fdoors.local += @s fdoors.last_motion.z
 
 scoreboard players set 10 fdoors.local 10
 scoreboard players operation fdoors.arrow.x fdoors.local /= 10 fdoors.local
