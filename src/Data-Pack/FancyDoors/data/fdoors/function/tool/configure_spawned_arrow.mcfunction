@@ -4,5 +4,8 @@
 # Make this arrow impossible to pick up
 data modify entity @s pickup set value 0
 
+# Make arrow do ZERO damage
+data modify entity @s damage set value 0.0d
+
 # Mark as configured
 tag @s add fdoors.selector_arrow
