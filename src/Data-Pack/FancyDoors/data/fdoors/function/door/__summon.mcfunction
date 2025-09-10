@@ -19,7 +19,7 @@ scoreboard players set @s fdoors.animation.old_delta 0
 #    range - triggers when entity on ACL list is within a given range (params: range [int])
 #    predicate - triggers when a custom predicate is filled (params: predicate [str])
 #    
-data modify entity @s data set value {blocks:[], tigger: "range", trigger_args: {acl: [], min: 0, max: 8}, duration: 5, sounds:{}}
+data modify entity @s data set value {blocks:[], trigger: "range", trigger_args: {acl: [], min: 0, max: 8}, duration: 5, offset: 3, sounds:{}}
 
 # Configure default sound effects
 data modify entity @s data.sounds.start_open set value {sound:"minecraft:entity.iron_golem.attack", volume: 1.0, pitch: 2.0}

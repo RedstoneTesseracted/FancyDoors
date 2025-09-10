@@ -7,3 +7,4 @@ function fdoors:door/open/place_air
 
 # Force duration score
 execute store result score @s fdoors.animation.duration run data get entity @s data.duration
+execute store result score @s fdoors.animation.offset run data get entity @s data.offset

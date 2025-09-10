@@ -23,8 +23,13 @@ scoreboard objectives add fdoors.animation.tick dummy
 scoreboard objectives add fdoors.animation.duration dummy
 scoreboard objectives add fdoors.animation.delta dummy
 scoreboard objectives add fdoors.animation.old_delta dummy
+scoreboard objectives add fdoors.animation.offset dummy
 
 scoreboard objectives add fdoors.local dummy
+scoreboard objectives add fdoors.global dummy
+
+# Configuration constants
+scoreboard players set fdoors.precision fdoors.global 100
 
 # Forcibly reset advancement triggers
 advancement revoke @s only fdoors:hidden/pair_crossbow_tool
