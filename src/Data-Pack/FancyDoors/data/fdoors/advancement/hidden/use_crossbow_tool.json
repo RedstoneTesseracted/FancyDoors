@@ -6,7 +6,11 @@
                 "player": [],
                 "item": {
                     "predicates": {
-                        "minecraft:custom_data": "{fdoors:{tool:1b}}"
+                        "minecraft:custom_data": {
+                            "fdoors": {
+                                "tool": true
+                            }
+                        }
                     }
                 }
             }
