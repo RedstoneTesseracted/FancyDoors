@@ -2,8 +2,4 @@
 # The result is returned using /return
 # It is run BY and AT the base door entity
 
-# Player in range
-execute if entity @a[distance=..4,predicate=!fdoors:holding_selector_crossbow] run return 1
-
-# Checks failed
-return 0
+return run function fdoors:door/__is_triggered with entity @s data.trigger_args
