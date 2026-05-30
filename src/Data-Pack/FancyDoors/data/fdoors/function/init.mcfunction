@@ -28,10 +28,12 @@ scoreboard objectives add fdoors.animation.offset dummy
 scoreboard objectives add fdoors.local dummy
 scoreboard objectives add fdoors.global dummy
 
+# Dialog trigger scores
+scoreboard objectives add fdoors.quits minecraft.custom:minecraft.leave_game
+scoreboard objectives add fdoors.menu.action trigger
+
 # Configuration constants
 scoreboard players set fdoors.precision fdoors.global 100
 
-# Forcibly reset advancement triggers
-advancement revoke @s only fdoors:hidden/pair_crossbow_tool
-advancement revoke @s only fdoors:hidden/use_crossbow_tool
-
+# Launch the periodic fixer function
+function fdoors:periodic_fix

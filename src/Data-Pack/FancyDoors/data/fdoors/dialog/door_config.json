@@ -1,0 +1,72 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "Door Configuration",
+    "inputs": [
+        {
+            "type": "minecraft:single_option",
+            "key": "action",
+            "label": {
+                "translate": "fdoors.menu.trigger",
+                "fallback": "Trigger"
+            },
+            "options": [
+                {
+                    "id": "1",
+                    "display": {
+                        "storage": "fdoors:temp",
+                        "nbt": "menu.trigger"
+                    },
+                    "initial": true
+                },
+                {
+                    "id": "2",
+                    "display": {
+                        "translate": "fdoors.menu.trigger.range",
+                        "fallback": "Range"
+                    }
+                },
+                {
+                    "id": "3",
+                    "display": {
+                        "translate": "fdoors.menu.trigger.block",
+                        "fallback": "Block"
+                    }
+                }
+            ]
+        }
+    ],
+    "can_close_with_escape": true,
+    "exit_action": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.action set 11"
+        }
+    },
+    "actions": [
+        {
+            "label": {
+                "translate": "fdoors.menu.destroy",
+                "fallback": "Remove Door",
+                "color": "red"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.action set 10"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.submit",
+                "fallback": "Submit"
+            },
+            "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "trigger fdoors.menu.action set $(action)"
+            }
+        }
+    ]
+}

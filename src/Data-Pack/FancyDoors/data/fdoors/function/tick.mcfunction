@@ -1,5 +1,9 @@
 # This function handles the per-tick functionality of the datapack
 
+# Handle scoreboard triggers
+execute as @a[scores={fdoors.quits=1..}] run function fdoors:every_join
+execute as @a[tag=fdoors.menu.open,scores={fdoors.menu.action=1..}] run function fdoors:menu/action
+
 # Run door functionality
 execute as @e[tag=fdoors.door.base] at @s run function fdoors:door/door_tick
 
