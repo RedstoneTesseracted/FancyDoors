@@ -30,7 +30,7 @@ function_path = path.join('src', 'Data-Pack', 'FancyDoors', 'data', 'fdoors', 'f
 with open(function_path, mode='w') as wf:
     # Write start of function
     wf.write("""# This function does a brute-force check for 
-# the presense of every block state in order
+# the presence of every block state in order
 # to compile the block state string compatible
 # with /setblock
 #
