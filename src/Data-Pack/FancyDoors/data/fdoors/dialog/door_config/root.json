@@ -1,0 +1,80 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "Door Configuration",
+    "inputs": [],
+    "can_close_with_escape": true,
+    "exit_action": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.goto set -3"
+        }
+    },
+    "columns": 1,
+    "actions": [
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_trigger",
+                "fallback": "Trigger..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 2"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_duration",
+                "fallback": "Duration..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 3"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_transform",
+                "fallback": "Transform..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 4"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_sounds",
+                "fallback": "Sounds..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 5"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.destroy",
+                "fallback": "Remove Door",
+                "color": "red"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set -1"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.submit",
+                "fallback": "Submit"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set -2"
+            }
+        }
+    ]
+}

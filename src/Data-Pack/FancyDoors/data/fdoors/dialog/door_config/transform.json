@@ -1,0 +1,62 @@
+{
+    "type": "minecraft:multi_action",
+    "title": {
+        "translate": "fdoors.menu.transformation",
+        "fallback": "Transformation"
+    },
+    "inputs": [],
+    "can_close_with_escape": true,
+    "exit_action": {
+        "label": {
+            "translate": "fdoors.menu.back",
+            "fallback": "Back"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.goto set 1"
+        }
+    },
+    "columns": 1,
+    "actions": [
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_offset",
+                "fallback": "Offset..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 41"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_scale",
+                "fallback": "Scale..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 42"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_left_rotation",
+                "fallback": "Left Rotation..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 43"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.edit_right_rotation",
+                "fallback": "Right Rotation..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 44"
+            }
+        }
+    ]
+}

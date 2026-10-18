@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:notice",
+    "title": {
+        "translate": "fdoors.menu.error.macro_panic.title",
+        "fallback": "Error: Macro Failed"
+    },
+    "body": {
+        "type": "minecraft:plain_message",
+        "contents": {
+            "translate": "fdoors.menu.error.macro_panic.description",
+            "fallback": "Function macro failed to run, see chat for more information."
+        }
+    },
+    "can_close_with_escape": true,
+    "action": {
+        "label": {
+            "translate": "fdoors.menu.ok",
+            "fallback": "Ok"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.goto set 1"
+        }
+    }
+}

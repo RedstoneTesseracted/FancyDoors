@@ -1,0 +1,140 @@
+# This function builds and shows the trigger_item menu using current values
+
+# Declare template
+# <BEGIN AUTO-GENERATED BLOCK>
+data remove storage fdoors:menu menu.build
+data modify storage fdoors:menu menu.build set value {\
+    type: "minecraft:multi_action",\
+    title: {\
+        translate: "fdoors.menu.trigger.item",\
+        fallback: "Item Trigger"\
+    },\
+    body: {\
+        type: "minecraft:plain_message",\
+        contents: {\
+            translate: "fdoors.menu.trigger.item.help",\
+            fallback: "Door activates when a player holding a specific item enters within range"\
+        }\
+    },\
+    inputs: [\
+        {\
+            type: "minecraft:number_range",\
+            key: "min",\
+            label: {\
+                translate: "fdoors.menu.trigger.range_min_label",\
+                fallback: "Minimum Range (Blocks)"\
+            },\
+            start: 0,\
+            end: 20,\
+            step: 1,\
+            initial: 0\
+        },\
+        {\
+            type: "minecraft:number_range",\
+            key: "max",\
+            label: {\
+                translate: "fdoors.menu.trigger.range_max_label",\
+                fallback: "Maximum Range (Blocks)"\
+            },\
+            start: 0,\
+            end: 20,\
+            step: 1,\
+            initial: 5\
+        },\
+        {\
+            type: "minecraft:single_option",\
+            key: "set",\
+            label: {\
+                translate: "fdoors.menu.trigger.item.opt",\
+                fallback: "Item"\
+            },\
+            options: [\
+                {\
+                    id: "1",\
+                    display: {\
+                        translate: "fdoors.menu.trigger.item.opt1",\
+                        fallback: "No change"\
+                    },\
+                    initial: true\
+                },\
+                {\
+                    id: "2",\
+                    display: {\
+                        translate: "fdoors.menu.trigger.item.opt2",\
+                        fallback: "Set from item in main hand"\
+                    },\
+                    initial: false\
+                },\
+                {\
+                    id: "3",\
+                    display: {\
+                        translate: "fdoors.menu.trigger.item.opt3",\
+                        fallback: "Set from item in offhand"\
+                    },\
+                    initial: false\
+                }\
+            ]\
+        },\
+        {\
+            type: "minecraft:boolean",\
+            key: "opt",\
+            label: {\
+                translate: "fdoors.menu.trigger.item.include_components",\
+                fallback: "Include Custom Components",\
+                hover_event: {\
+                    action: "show_text",\
+                    value: {\
+                        translate: "fdoors.menu.trigger.item.component_hint",\
+                        fallback: "Only applies when \"Item\" is \"Set from item in main hand\" or \"Set from item in offhand\""\
+                    }\
+                }\
+            },\
+            initial: true,\
+            on_false: "0",\
+            on_true: "1"\
+        }\
+    ],\
+    can_close_with_escape: true,\
+    exit_action: {\
+        label: {\
+            translate: "fdoors.menu.cancel",\
+            fallback: "Cancel"\
+        },\
+        action: {\
+            type: "minecraft:run_command",\
+            command: "trigger fdoors.menu.item set -1"\
+        }\
+    },\
+    columns: 1,\
+    actions: [\
+        {\
+            label: {\
+                translate: "fdoors.menu.trigger.item_switch",\
+                fallback: "<Item>"\
+            },\
+            action: {\
+                type: "minecraft:run_command",\
+                command: "trigger fdoors.menu.item set -2"\
+            }\
+        },\
+        {\
+            label: {\
+                translate: "fdoors.menu.set",\
+                fallback: "Set"\
+            },\
+            action: {\
+                type: "minecraft:dynamic/run_command",\
+                template: "trigger fdoors.menu.item set $(min)1$(max)$(set)$(opt)"\
+            }\
+        }\
+    ]\
+}
+# <END AUTO-GENERATED BLOCK>
+
+# Populate initial value(s)
+execute store result storage fdoors:menu menu.build.inputs[0].initial int 1 run scoreboard players get @s fdoors.menu.settings.range.min
+execute store result storage fdoors:menu menu.build.inputs[1].initial int 1 run scoreboard players get @s fdoors.menu.settings.range.max
+
+# Show dialog
+return run function fdoors:dialog/show
+

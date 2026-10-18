@@ -27,10 +27,43 @@ scoreboard objectives add fdoors.animation.offset dummy
 
 scoreboard objectives add fdoors.local dummy
 scoreboard objectives add fdoors.global dummy
+scoreboard objectives add fdoors.number dummy
+
+# Door configuration dialog working scores
+scoreboard objectives add fdoors.menu.settings.trigger dummy
+scoreboard objectives add fdoors.menu.settings.range.min dummy
+scoreboard objectives add fdoors.menu.settings.range.max dummy
+scoreboard objectives add fdoors.menu.settings.block dummy
+scoreboard objectives add fdoors.menu.settings.item dummy
+scoreboard objectives add fdoors.menu.settings.item_components dummy
+scoreboard objectives add fdoors.menu.settings.duration dummy
+scoreboard objectives add fdoors.menu.settings.transform.offset.x dummy
+scoreboard objectives add fdoors.menu.settings.transform.offset.y dummy
+scoreboard objectives add fdoors.menu.settings.transform.offset.z dummy
+scoreboard objectives add fdoors.menu.settings.transform.scale.x dummy
+scoreboard objectives add fdoors.menu.settings.transform.scale.y dummy
+scoreboard objectives add fdoors.menu.settings.transform.scale.z dummy
+scoreboard objectives add fdoors.menu.settings.transform.l_rotation.axis dummy
+scoreboard objectives add fdoors.menu.settings.transform.l_rotation.angle dummy
+scoreboard objectives add fdoors.menu.settings.transform.r_rotation.axis dummy
+scoreboard objectives add fdoors.menu.settings.transform.r_rotation.angle dummy
 
 # Dialog trigger scores
 scoreboard objectives add fdoors.quits minecraft.custom:minecraft.leave_game
-scoreboard objectives add fdoors.menu.action trigger
+scoreboard objectives add fdoors.menu.goto trigger
+scoreboard objectives add fdoors.menu.duration trigger
+scoreboard objectives add fdoors.menu.range trigger
+scoreboard objectives add fdoors.menu.item trigger
+scoreboard objectives add fdoors.menu.block trigger
+scoreboard objectives add fdoors.menu.transform.offset trigger
+scoreboard objectives add fdoors.menu.transform.scale trigger
+scoreboard objectives add fdoors.menu.transform.rotation trigger
+
+# Constant numbers
+scoreboard players set 4 fdoors.number 4
+scoreboard players set 10 fdoors.number 10
+scoreboard players set 100 fdoors.number 100
+scoreboard players set 1000 fdoors.number 1000
 
 # Configuration constants
 scoreboard players set fdoors.precision fdoors.global 100

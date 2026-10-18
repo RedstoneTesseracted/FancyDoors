@@ -1,12 +1,9 @@
-# This function enables various scoreboard triggers and shows the dialog screen to the player
+# Opens the door configuration dialog
 
-# Set up data for substitution
-data modify storage fdoors:temp menu set value {trigger: "Range"}
+# Read current settings from door
+execute store result score fdoors.door_exists fdoors.local run function fdoors:menu/read_current_values
+execute if score fdoors.door_exists fdoors.local matches 0 run title @s actionbar {translate: "fdoors.menu.open.no_door_exists", fallback: "No paired door", color: "red"}
+execute if score fdoors.door_exists fdoors.local matches 0 run return fail
 
-# Enable triggers
-scoreboard players reset @s fdoors.menu.action
-scoreboard players enable @s fdoors.menu.action
-tag @s add fdoors.menu.open
-
-# Show dialog
-dialog show @s fdoors:door_config
+# Show menu
+function fdoors:menu/door_config/root

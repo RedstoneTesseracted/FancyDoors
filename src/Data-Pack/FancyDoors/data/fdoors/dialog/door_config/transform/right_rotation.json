@@ -1,0 +1,74 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.menu.transform.right_rotation",
+        "fallback": "Right Rotation"
+    },
+    "body": {
+        "type": "minecraft:plain_message",
+        "contents": {
+            "translate": "fdoors.menu.transform.right_rotation.help",
+            "fallback": "Display entity right-rotation in open state."
+        }
+    },
+    "inputs": [
+        {
+            "type": "minecraft:number_range",
+            "key": "x",
+            "label": {
+                "translate": "fdoors.menu.transform.angle",
+                "fallback": "Angle"
+            },
+            "start": 0,
+            "end": 360,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:single_option",
+            "key": "axis",
+            "label": {
+                "translate": "fdoors.menu.transform.axis",
+                "fallback": "Axis"
+            },
+            "options": [
+                {
+                    "id": "0",
+                    "display": "X",
+                    "initial": false
+                },
+                {
+                    "id": "1",
+                    "display": "Y",
+                    "initial": false
+                },
+                {
+                    "id": "2",
+                    "display": "Z",
+                    "initial": false
+                }
+            ]
+        }
+    ],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.set",
+            "fallback": "Set"
+        },
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "trigger fdoors.menu.transform.rotation set $(angle)$(axis)"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.transform.rotation set -1"
+        }
+    }
+}
