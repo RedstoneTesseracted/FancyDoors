@@ -35,15 +35,20 @@ execute if entity @s[gamemode=creative] run scoreboard players set fdoors.is_not
 data remove storage fdoors:utility compare
 execute unless score fdoors.is_not_equal fdoors.local matches 0 run title @a actionbar {"translate": "fdoors.message.start_pairing.wrong_owner", "fallback": "You do not own this door", "color": "red"}
 
+# Check if already paired to this door
+execute store result score fdoors.is_pairing_twice fdoors.local run function fdoors:tool/is_pairing_twice
 
 # Apply item modifier to held crossbow
 execute if score fdoors.is_not_equal fdoors.local matches 0 run execute if items entity @s weapon.mainhand minecraft:crossbow[minecraft:custom_data~{fdoors:{tool:1b}}] run item modify entity @s weapon.mainhand fdoors:pair_crossbow_tool
 
 # Show text and play sound
-execute if score fdoors.is_not_equal fdoors.local matches 0 run title @a actionbar {"translate": "fdoors.message.start_pairing", "fallback": "Started pairing!", "color": "green"}
+execute if score fdoors.is_not_equal fdoors.local matches 0 run title @a actionbar {"translate": "fdoors.message.start_pairing", "fallback": "Punch controller hitbox again for menu", "color": "green"}
 playsound minecraft:block.note_block.hat block @a ~ ~ ~ 1 1.0
 
 # Clear context tags
 tag @e remove fdoors.door.base.context
 tag @a remove fdoors.player.context
 tag @e remove fdoors.door.context
+
+# Show menu if pairing twice
+execute if score fdoors.is_pairing_twice fdoors.local matches 1 run function fdoors:menu/show_dialog
