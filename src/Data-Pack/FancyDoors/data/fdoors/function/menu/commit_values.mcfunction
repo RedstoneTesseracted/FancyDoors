@@ -15,17 +15,21 @@ execute if score @s fdoors.menu.settings.trigger matches 2 run data remove stora
 execute if score @s fdoors.menu.settings.trigger matches 2 unless data storage fdoors:utility config.trigger_args.item run data modify storage fdoors:utility config.trigger_args.item set value {}
 execute store result storage fdoors:utility config.trigger_args.min int 1 run scoreboard players get @s fdoors.menu.settings.range.min
 execute store result storage fdoors:utility config.trigger_args.max int 1 run scoreboard players get @s fdoors.menu.settings.range.max
-execute store result storage fdoors:utility config.trigger_args.duration int 1 run scoreboard players get @s fdoors.menu.settings.duration
-execute store result storage fdoors:utility config.trigger_args.transform.x_offset int 1 run scoreboard players get @s fdoors.menu.settings.transform.offset.x
-execute store result storage fdoors:utility config.trigger_args.transform.y_offset int 1 run scoreboard players get @s fdoors.menu.settings.transform.offset.y
-execute store result storage fdoors:utility config.trigger_args.transform.z_offset int 1 run scoreboard players get @s fdoors.menu.settings.transform.offset.z
-execute store result storage fdoors:utility config.trigger_args.transform.x_scale int 1 run scoreboard players get @s fdoors.menu.settings.transform.scale.x
-execute store result storage fdoors:utility config.trigger_args.transform.y_scale int 1 run scoreboard players get @s fdoors.menu.settings.transform.scale.y
-execute store result storage fdoors:utility config.trigger_args.transform.z_scale int 1 run scoreboard players get @s fdoors.menu.settings.transform.scale.z
-execute store result storage fdoors:utility config.trigger_args.transform.left_rotation.axis int 1 run scoreboard players get @s fdoors.menu.settings.transform.l_rotation.axis
-execute store result storage fdoors:utility config.trigger_args.transform.left_rotation.angle int 1 run scoreboard players get @s fdoors.menu.settings.transform.l_rotation.angle
-execute store result storage fdoors:utility config.trigger_args.transform.right_rotation.axis int 1 run scoreboard players get @s fdoors.menu.settings.transform.r_rotation.axis
-execute store result storage fdoors:utility config.trigger_args.transform.right_rotation.angle int 1 run scoreboard players get @s fdoors.menu.settings.transform.r_rotation.angle
+execute store result storage fdoors:utility config.duration int 1 run scoreboard players get @s fdoors.menu.settings.duration
+execute store result storage fdoors:utility config.transform.translation[0] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.x
+execute store result storage fdoors:utility config.transform.translation[1] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.y
+execute store result storage fdoors:utility config.transform.translation[2] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.z
+execute store result storage fdoors:utility config.transform.scale[0] int 0.1 run scoreboard players get @s fdoors.menu.settings.transform.scale.x
+execute store result storage fdoors:utility config.transform.scale[1] int 0.1 run scoreboard players get @s fdoors.menu.settings.transform.scale.y
+execute store result storage fdoors:utility config.transform.scale[2] int 0.1 run scoreboard players get @s fdoors.menu.settings.transform.scale.z
+execute if score @s fdoors.menu.settings.transform.l_rotation.axis matches 0 run data modify storage fdoors:utility config.transform.left_rotation.axis set value "x"
+execute if score @s fdoors.menu.settings.transform.l_rotation.axis matches 1 run data modify storage fdoors:utility config.transform.left_rotation.axis set value "y"
+execute if score @s fdoors.menu.settings.transform.l_rotation.axis matches 2 run data modify storage fdoors:utility config.transform.left_rotation.axis set value "z"
+execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 0 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "x"
+execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 1 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "y"
+execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 2 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "z"
+execute store result storage fdoors:utility config.transform.left_rotation.angle float 0.017453292519943295 run scoreboard players get @s fdoors.menu.settings.transform.l_rotation.angle
+execute store result storage fdoors:utility config.transform.right_rotation.angle float 0.017453292519943295 run scoreboard players get @s fdoors.menu.settings.transform.r_rotation.angle
 
 # Obtain item state if requested
 execute if score @s fdoors.menu.settings.item matches 2 run data modify storage fdoors:utility item set from entity @s SelectedItem

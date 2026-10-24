@@ -33,16 +33,20 @@ execute if data storage fdoors:utility config{trigger: "block"} run scoreboard p
 execute if data storage fdoors:utility config{trigger: "item"} run scoreboard players set @s fdoors.menu.settings.trigger 2
 execute if data storage fdoors:utility config.trigger_args.min store result score @s fdoors.menu.settings.range.min run data get storage fdoors:utility config.trigger_args.min
 execute if data storage fdoors:utility config.trigger_args.max store result score @s fdoors.menu.settings.range.max run data get storage fdoors:utility config.trigger_args.max
-execute if data storage fdoors:utility config.trigger_args.duration store result score @s fdoors.menu.settings.duration run data get storage fdoors:utility config.trigger_args.duration
-execute if data storage fdoors:utility config.trigger_args.transform.x_offset store result score @s fdoors.menu.settings.transform.offset.x run data get storage fdoors:utility config.trigger_args.transform.x_offset
-execute if data storage fdoors:utility config.trigger_args.transform.y_offset store result score @s fdoors.menu.settings.transform.offset.y run data get storage fdoors:utility config.trigger_args.transform.y_offset
-execute if data storage fdoors:utility config.trigger_args.transform.z_offset store result score @s fdoors.menu.settings.transform.offset.z run data get storage fdoors:utility config.trigger_args.transform.z_offset
-execute if data storage fdoors:utility config.trigger_args.transform.x_scale store result score @s fdoors.menu.settings.transform.scale.x run data get storage fdoors:utility config.trigger_args.transform.x_scale
-execute if data storage fdoors:utility config.trigger_args.transform.y_scale store result score @s fdoors.menu.settings.transform.scale.y run data get storage fdoors:utility config.trigger_args.transform.y_scale
-execute if data storage fdoors:utility config.trigger_args.transform.z_scale store result score @s fdoors.menu.settings.transform.scale.z run data get storage fdoors:utility config.trigger_args.transform.z_scale
-execute if data storage fdoors:utility config.trigger_args.transform.left_rotation.axis store result score @s fdoors.menu.settings.transform.l_rotation.axis run data get storage fdoors:utility config.trigger_args.transform.left_rotation.axis
-execute if data storage fdoors:utility config.trigger_args.transform.left_rotation.angle store result score @s fdoors.menu.settings.transform.l_rotation.angle run data get storage fdoors:utility config.trigger_args.transform.left_rotation.angle
-execute if data storage fdoors:utility config.trigger_args.transform.right_rotation.axis store result score @s fdoors.menu.settings.transform.r_rotation.axis run data get storage fdoors:utility config.trigger_args.transform.right_rotation.axis
-execute if data storage fdoors:utility config.trigger_args.transform.right_rotation.angle store result score @s fdoors.menu.settings.transform.r_rotation.angle run data get storage fdoors:utility config.trigger_args.transform.right_rotation.angle
+execute if data storage fdoors:utility config.duration store result score @s fdoors.menu.settings.duration run data get storage fdoors:utility config.duration
+execute if data storage fdoors:utility config.transform.translation[0] store result score @s fdoors.menu.settings.transform.offset.x run data get storage fdoors:utility config.transform.translation[0] 10.0
+execute if data storage fdoors:utility config.transform.translation[1] store result score @s fdoors.menu.settings.transform.offset.y run data get storage fdoors:utility config.transform.translation[1] 10.0
+execute if data storage fdoors:utility config.transform.translation[2] store result score @s fdoors.menu.settings.transform.offset.z run data get storage fdoors:utility config.transform.translation[2] 10.0
+execute if data storage fdoors:utility config.transform.scale[0] store result score @s fdoors.menu.settings.transform.scale.x run data get storage fdoors:utility config.transform.scale[0] 10.0
+execute if data storage fdoors:utility config.transform.scale[1] store result score @s fdoors.menu.settings.transform.scale.y run data get storage fdoors:utility config.transform.scale[1] 10.0
+execute if data storage fdoors:utility config.transform.scale[2] store result score @s fdoors.menu.settings.transform.scale.z run data get storage fdoors:utility config.transform.scale[2] 10.0
+execute if data storage fdoors:utility config.transform.left_rotation{axis: "x"} run scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 0
+execute if data storage fdoors:utility config.transform.left_rotation{axis: "y"} run scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 1
+execute if data storage fdoors:utility config.transform.left_rotation{axis: "z"} run scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 2
+execute if data storage fdoors:utility config.transform.right_rotation{axis: "x"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 0
+execute if data storage fdoors:utility config.transform.right_rotation{axis: "y"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 1
+execute if data storage fdoors:utility config.transform.right_rotation{axis: "z"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 2
+execute if data storage fdoors:utility config.transform.left_rotation.angle store result score @s fdoors.menu.settings.transform.l_rotation.angle run data get storage fdoors:utility config.transform.left_rotation.angle 57.29577951308232
+execute if data storage fdoors:utility config.transform.right_rotation.angle store result score @s fdoors.menu.settings.transform.r_rotation.angle run data get storage fdoors:utility config.transform.right_rotation.angle 57.29577951308232
 
 return 1
