@@ -17,8 +17,9 @@ tag @s remove fdoors.menu.expect.block
 tag @s remove fdoors.menu.expect.item
 tag @s remove fdoors.menu.expect.range
 tag @s remove fdoors.menu.expect.transform.left_rotation
-tag @s remove fdoors.menu.expect.transform.offset
+tag @s remove fdoors.menu.expect.transform.translation.x
+tag @s remove fdoors.menu.expect.transform.translation.y
+tag @s remove fdoors.menu.expect.transform.translation.z
 tag @s remove fdoors.menu.expect.transform.right_rotation
 tag @s remove fdoors.menu.expect.transform.scale
-tag @s remove fdoors.menu.expect.transform.translation
 tag @s remove fdoors.menu.expect.color

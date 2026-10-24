@@ -1,9 +1,9 @@
 # This function displays the root menu to the player that runs it
 
 # Enable triggers
-scoreboard players reset @s fdoors.menu.transform.offset
-scoreboard players enable @s fdoors.menu.transform.offset
-tag @s add fdoors.menu.expect.transform.translation
+scoreboard players reset @s fdoors.menu.goto
+scoreboard players enable @s fdoors.menu.goto
+tag @s add fdoors.menu.expect.goto
 tag @s add fdoors.menu.open
 
 # Show dialog

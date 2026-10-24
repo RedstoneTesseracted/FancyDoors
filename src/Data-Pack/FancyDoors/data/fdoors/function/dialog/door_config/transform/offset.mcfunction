@@ -4,75 +4,71 @@
 # <BEGIN AUTO-GENERATED BLOCK>
 data remove storage fdoors:menu menu.build
 data modify storage fdoors:menu menu.build set value {\
-    type: "minecraft:confirmation",\
+    type: "minecraft:multi_action",\
     title: {\
         translate: "fdoors.menu.transform.translation",\
         fallback: "Translation"\
     },\
-    body: {\
-        type: "minecraft:plain_message",\
-        contents: {\
-            translate: "fdoors.menu.transform.translation.help",\
-            fallback: "Display entity translation in open state.  Results here will be divided by 10."\
-        }\
-    },\
-    inputs: [\
-        {\
-            type: "minecraft:number_range",\
-            key: "x",\
-            label: "10*X",\
-            start: 0,\
-            end: 99,\
-            step: 1,\
-            initial: 0\
-        },\
-        {\
-            type: "minecraft:number_range",\
-            key: "y",\
-            label: "10*Y",\
-            start: 0,\
-            end: 99,\
-            step: 1,\
-            initial: 0\
-        },\
-        {\
-            type: "minecraft:number_range",\
-            key: "z",\
-            label: "10*Z",\
-            start: 0,\
-            end: 99,\
-            step: 1,\
-            initial: 0\
-        }\
-    ],\
+    inputs: [],\
     can_close_with_escape: true,\
-    yes: {\
+    exit_action: {\
         label: {\
-            translate: "fdoors.menu.set",\
-            fallback: "Set"\
-        },\
-        action: {\
-            type: "minecraft:dynamic/run_command",\
-            template: "trigger fdoors.menu.transform.offset set $(x)0$(y)0$(z)"\
-        }\
-    },\
-    no: {\
-        label: {\
-            translate: "fdoors.menu.cancel",\
-            fallback: "Cancel"\
+            translate: "fdoors.menu.back",\
+            fallback: "Back"\
         },\
         action: {\
             type: "minecraft:run_command",\
-            command: "trigger fdoors.menu.transform.offset set -1"\
+            command: "trigger fdoors.menu.goto set 4"\
         }\
-    }\
+    },\
+    actions: [\
+        {\
+            label: {\
+                translate: "fdoors.menu.transform.offset.x_label",\
+                fallback: "X: %s",\
+                with: [\
+                    1\
+                ]\
+            },\
+            action: {\
+                type: "minecraft:run_command",\
+                command: "trigger fdoors.menu.goto set 411"\
+            }\
+        },\
+        {\
+            label: {\
+                translate: "fdoors.menu.transform.offset.y_label",\
+                fallback: "Y: %s",\
+                with: [\
+                    1\
+                ]\
+            },\
+            action: {\
+                type: "minecraft:run_command",\
+                command: "trigger fdoors.menu.goto set 412"\
+            }\
+        },\
+        {\
+            label: {\
+                translate: "fdoors.menu.transform.offset.z_label",\
+                fallback: "Z: %s",\
+                with: [\
+                    1\
+                ]\
+            },\
+            action: {\
+                type: "minecraft:run_command",\
+                command: "trigger fdoors.menu.goto set 413"\
+            }\
+        }\
+    ]\
 }
 # <END AUTO-GENERATED BLOCK>
 
 # Populate initial value(s)
-execute store result storage fdoors:menu menu.build.inputs[0].initial int 1 run scoreboard players get @s fdoors.menu.settings.transform.offset.x
-execute store result storage fdoors:menu menu.build.inputs[1].initial int 1 run scoreboard players get @s fdoors.menu.settings.transform.offset.y
-execute store result storage fdoors:menu menu.build.inputs[2].initial int 1 run scoreboard players get @s fdoors.menu.settings.transform.offset.z
+execute store result storage fdoors:menu menu.build.actions[0].label.with[0] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.x
+execute store result storage fdoors:menu menu.build.actions[1].label.with[0] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.y
+execute store result storage fdoors:menu menu.build.actions[2].label.with[0] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.z
 
 # Show dialog
 data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/transform/offset"

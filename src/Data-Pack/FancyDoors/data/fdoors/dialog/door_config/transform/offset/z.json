@@ -1,0 +1,46 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.menu.transform.offset.z",
+        "fallback": "Z-Offset"
+    },
+    "body": {
+        "type": "minecraft:plain_message",
+        "contents": {
+            "translate": "fdoors.menu.transform.left_rotation.help",
+            "fallback": "Display entity z-translation when in open state.  Results here will be divided by 10."
+        }
+    },
+    "inputs": [
+        {
+            "type": "minecraft:number_range",
+            "key": "value",
+            "label": "10*Z",
+            "start": -200,
+            "end": 200,
+            "step": 1,
+            "initial": 0
+        }
+    ],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.set",
+            "fallback": "Set"
+        },
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "trigger fdoors.menu.transform.offset set $(value)"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.transform.offset set -1"
+        }
+    }
+}
