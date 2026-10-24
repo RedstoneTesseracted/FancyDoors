@@ -113,4 +113,5 @@ execute if score @s fdoors.menu.settings.block matches 6 run data modify storage
 execute if score @s fdoors.menu.settings.block matches 7 run data modify storage fdoors:menu menu.build.inputs[0].options[7].initial set value true
 
 # Show dialog
+data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/trigger_block"
 return run function fdoors:dialog/show

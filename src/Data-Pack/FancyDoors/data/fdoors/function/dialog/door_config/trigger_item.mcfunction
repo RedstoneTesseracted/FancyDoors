@@ -136,5 +136,6 @@ execute store result storage fdoors:menu menu.build.inputs[0].initial int 1 run 
 execute store result storage fdoors:menu menu.build.inputs[1].initial int 1 run scoreboard players get @s fdoors.menu.settings.range.max
 
 # Show dialog
+data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/trigger_item"
 return run function fdoors:dialog/show
 

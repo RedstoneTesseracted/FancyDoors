@@ -86,4 +86,5 @@ execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 1 run
 execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 2 run data modify storage fdoors:menu menu.build.inputs[1].options[2].initial set value true
 
 # Show dialog
+data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/transform/right_rotation"
 return run function fdoors:dialog/show

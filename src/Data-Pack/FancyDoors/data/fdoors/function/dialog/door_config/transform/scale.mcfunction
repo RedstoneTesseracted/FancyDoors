@@ -75,5 +75,5 @@ execute store result storage fdoors:menu menu.build.inputs[1].initial int 1 run 
 execute store result storage fdoors:menu menu.build.inputs[2].initial int 1 run scoreboard players get @s fdoors.menu.settings.transform.scale.z
 
 # Show dialog
-say triggering scale function!
+data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/transform/scale"
 return run function fdoors:dialog/show

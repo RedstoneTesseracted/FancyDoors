@@ -51,4 +51,5 @@ data modify storage fdoors:menu menu.build set value {\
 execute store result storage fdoors:menu menu.build.inputs[0].initial int 1 run scoreboard players get @s fdoors.menu.settings.duration
 
 # Show dialog
+data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/duration"
 return run function fdoors:dialog/show
