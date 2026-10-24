@@ -1,10 +1,10 @@
 # This function updates all paired block displays at a particular animation frame
 # This is run BY the base door entity
 
-# Make several scores available in other execution scopes
+# Make several scores/data available in other execution scopes
+data modify storage fdoors:utility transform set from entity @s data.transform
 scoreboard players operation fdoors.tick fdoors.local = @s fdoors.animation.tick
 scoreboard players operation fdoors.duration fdoors.local = @s fdoors.animation.duration
-scoreboard players operation fdoors.height_offset fdoors.local = @s fdoors.animation.offset
 scoreboard players operation fdoors.delta fdoors.local = @s fdoors.animation.delta
 scoreboard players operation fdoors.uuid1 fdoors.local = @s fdoors.uuid1
 scoreboard players operation fdoors.uuid2 fdoors.local = @s fdoors.uuid2

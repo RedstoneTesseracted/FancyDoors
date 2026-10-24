@@ -23,7 +23,6 @@ scoreboard objectives add fdoors.animation.tick dummy
 scoreboard objectives add fdoors.animation.duration dummy
 scoreboard objectives add fdoors.animation.delta dummy
 scoreboard objectives add fdoors.animation.old_delta dummy
-scoreboard objectives add fdoors.animation.offset dummy
 
 scoreboard objectives add fdoors.local dummy
 scoreboard objectives add fdoors.global dummy
@@ -64,9 +63,6 @@ scoreboard players set 4 fdoors.number 4
 scoreboard players set 10 fdoors.number 10
 scoreboard players set 100 fdoors.number 100
 scoreboard players set 1000 fdoors.number 1000
-
-# Configuration constants
-scoreboard players set fdoors.precision fdoors.global 100
 
 # Launch the periodic fixer function
 function fdoors:periodic_fix

@@ -15,6 +15,10 @@ data modify storage fdoors:utility xyz[2] set from storage fdoors:utility show_b
 data modify entity @s transformation.translation set from storage fdoors:utility xyz
 data modify entity @s block_state.Name set from storage fdoors:utility show_block.Name
 data modify entity @s block_state.Properties set from storage fdoors:utility show_block.Properties
+data modify entity @s data.offset set value {x: 0, y: 0, z: 0}
+data modify entity @s data.offset.x set from storage fdoors:utility show_block.x
+data modify entity @s data.offset.y set from storage fdoors:utility show_block.y
+data modify entity @s data.offset.z set from storage fdoors:utility show_block.z
 
 # Pair with door base
 scoreboard players operation @s fdoors.owner_uuid1 = fdoors.uuid1 fdoors.local
