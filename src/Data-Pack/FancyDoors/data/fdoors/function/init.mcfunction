@@ -46,6 +46,9 @@ scoreboard objectives add fdoors.menu.settings.transform.l_rotation.axis dummy
 scoreboard objectives add fdoors.menu.settings.transform.l_rotation.angle dummy
 scoreboard objectives add fdoors.menu.settings.transform.r_rotation.axis dummy
 scoreboard objectives add fdoors.menu.settings.transform.r_rotation.angle dummy
+scoreboard objectives add fdoors.menu.settings.color.r dummy
+scoreboard objectives add fdoors.menu.settings.color.g dummy
+scoreboard objectives add fdoors.menu.settings.color.b dummy
 
 # Dialog trigger scores
 scoreboard objectives add fdoors.quits minecraft.custom:minecraft.leave_game
@@ -57,11 +60,15 @@ scoreboard objectives add fdoors.menu.block trigger
 scoreboard objectives add fdoors.menu.transform.offset trigger
 scoreboard objectives add fdoors.menu.transform.scale trigger
 scoreboard objectives add fdoors.menu.transform.rotation trigger
+scoreboard objectives add fdoors.menu.color trigger
 
 # Constant numbers
 scoreboard players set 4 fdoors.number 4
 scoreboard players set 10 fdoors.number 10
+scoreboard players set 99 fdoors.number 99
 scoreboard players set 100 fdoors.number 100
+scoreboard players set 255 fdoors.number 255
+scoreboard players set 256 fdoors.number 256
 scoreboard players set 1000 fdoors.number 1000
 
 # Launch the periodic fixer function

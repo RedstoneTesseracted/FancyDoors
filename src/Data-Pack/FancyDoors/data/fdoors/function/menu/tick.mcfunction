@@ -97,6 +97,12 @@
 #       Start Close
 #       Finish Close
 #       Back (fdoors.menu.goto=1)
+#   Outline Color (fdoors.menu.goto=6)
+#       R
+#       G
+#       B
+#       Set (fdoors.menu.color=$(r)0$(g)0$(b))
+#       Cancel (fdoors.menu.color=-1)
 #   Remove Door (fdoors.menu.goto=-1)
 #   Commit (fdoors.menu.goto=-2)
 #   Cancel (fdoors.menu.goto=-3)
@@ -110,3 +116,4 @@ execute if entity @s[tag=fdoors.menu.expect.transform.translation] unless functi
 execute if entity @s[tag=fdoors.menu.expect.transform.scale] unless function fdoors:menu/check/transform_scale_enabled run return run function fdoors:menu/handle/transform_offset
 execute if entity @s[tag=fdoors.menu.expect.transform.left_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_left_rotation
 execute if entity @s[tag=fdoors.menu.expect.transform.right_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_right_rotation
+execute if entity @s[tag=fdoors.menu.expect.color] unless function fdoors:menu/check/color_enabled run return run function fdoors:menu/handle/color

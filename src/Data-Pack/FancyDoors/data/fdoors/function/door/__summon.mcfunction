@@ -19,8 +19,8 @@ scoreboard players set @s fdoors.animation.old_delta 0
 #    range - triggers when a player is within a given range (params: range [int])
 #    predicate - triggers when a custom predicate is fulfilled (params: predicate [str])
 #    block - triggers when a block state is fulfilled
-#    
-data modify entity @s data set value {blocks:[], trigger: "range", trigger_args: {min: 0, max: 4}, duration: 5, transform: {translation: [0.0, 3.0, 0.0]}, sounds:{}}
+#
+data modify entity @s data set value {blocks:[], trigger: "range", trigger_args: {min: 0, max: 4}, duration: 5, transform: {translation: [0.0, 3.0, 0.0]}, sounds:{}, color: {r: 0, g: 0, b: 1.0}, glow_color: 255}
 
 # Configure default sound effects
 data modify entity @s data.sounds.start_open set value {sound:"minecraft:entity.iron_golem.attack", volume: 1.0, pitch: 2.0}

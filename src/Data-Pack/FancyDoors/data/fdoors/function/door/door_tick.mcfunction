@@ -25,4 +25,4 @@ execute if score @s fdoors.animation.delta matches 1 if score @s fdoors.animatio
 execute if score @s fdoors.animation.old_delta matches -1 unless score @s fdoors.animation.tick matches 0.. run function fdoors:door/close/finish_close
 
 # Show particles on the interaction entity when in configuration mode
-execute if entity @s[tag=fdoors.door.configure_ready] positioned ~-0.5 ~ ~-0.5 run function fdoors:door/configure/show_outline
+execute if entity @s[tag=fdoors.door.configure_ready] positioned ~-0.5 ~ ~-0.5 run function fdoors:door/configure/show_outline with entity @s data.color

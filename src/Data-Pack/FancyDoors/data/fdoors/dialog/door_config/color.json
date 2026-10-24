@@ -1,0 +1,57 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.menu.color",
+        "fallback": "Outline Color"
+    },
+    "inputs": [
+        {
+            "type": "minecraft:number_range",
+            "key": "r",
+            "label": "R",
+            "start": 0,
+            "end": 99,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "g",
+            "label": "G",
+            "start": 0,
+            "end": 99,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "b",
+            "label": "B",
+            "start": 0,
+            "end": 99,
+            "step": 1,
+            "initial": 0
+        }
+    ],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.set",
+            "fallback": "Set"
+        },
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "trigger fdoors.menu.color set $(r)0$(g)0$(b)"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.color set -1"
+        }
+    }
+}

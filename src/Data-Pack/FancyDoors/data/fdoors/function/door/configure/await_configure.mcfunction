@@ -12,6 +12,8 @@ execute store result score @e[type=minecraft:interaction,tag=fdoors.door.configu
 execute store result score @e[type=minecraft:interaction,tag=fdoors.door.configure_interaction.new] fdoors.owner_uuid4 run data get entity @s UUID[3]
 
 # Summon the preview
+data modify storage fdoors:utility temp.glow_color set value 255
+execute if data entity @s data.glow_color run data modify storage fdoors:utility temp.glow_color set from entity @s data.glow_color
 function fdoors:door/configure/summon_preview
 
 # Clear the new interaction entity tags

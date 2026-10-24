@@ -1,5 +1,5 @@
 # This function displays the root menu to the player that runs it
-say fdoors:menu/door_config/transform/offset
+
 # Enable triggers
 scoreboard players reset @s fdoors.menu.transform.offset
 scoreboard players enable @s fdoors.menu.transform.offset

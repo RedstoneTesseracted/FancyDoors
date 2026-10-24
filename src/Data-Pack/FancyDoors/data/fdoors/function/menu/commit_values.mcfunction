@@ -30,6 +30,23 @@ execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 1 run
 execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 2 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "z"
 execute store result storage fdoors:utility config.transform.left_rotation.angle float 0.017453292519943295 run scoreboard players get @s fdoors.menu.settings.transform.l_rotation.angle
 execute store result storage fdoors:utility config.transform.right_rotation.angle float 0.017453292519943295 run scoreboard players get @s fdoors.menu.settings.transform.r_rotation.angle
+execute store result storage fdoors:utility config.color.r float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.r
+execute store result storage fdoors:utility config.color.g float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.g
+execute store result storage fdoors:utility config.color.b float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.b
+
+scoreboard players operation @s fdoors.menu.settings.color.r *= 255 fdoors.number
+scoreboard players operation @s fdoors.menu.settings.color.r /= 99 fdoors.number
+scoreboard players operation @s fdoors.menu.settings.color.g *= 255 fdoors.number
+scoreboard players operation @s fdoors.menu.settings.color.g /= 99 fdoors.number
+scoreboard players operation @s fdoors.menu.settings.color.b *= 255 fdoors.number
+scoreboard players operation @s fdoors.menu.settings.color.b /= 99 fdoors.number
+scoreboard players operation fdoors.glow_color fdoors.local = @s fdoors.menu.settings.color.r
+tellraw @a {score: {name: "@s", objective: "fdoors.menu.settings.color.r"}}
+scoreboard players operation fdoors.glow_color fdoors.local *= 256 fdoors.number
+scoreboard players operation fdoors.glow_color fdoors.local += @s fdoors.menu.settings.color.g
+scoreboard players operation fdoors.glow_color fdoors.local *= 256 fdoors.number
+scoreboard players operation fdoors.glow_color fdoors.local += @s fdoors.menu.settings.color.b
+execute store result storage fdoors:utility config.glow_color int 1 run scoreboard players get fdoors.glow_color fdoors.local
 
 # Obtain item state if requested
 execute if score @s fdoors.menu.settings.item matches 2 run data modify storage fdoors:utility item set from entity @s SelectedItem

@@ -6,6 +6,7 @@ tag @s add fdoors.door.configuration_display
 
 # Set NBT data
 data merge entity @s {Glowing:1b, glow_color_override:255, transformation:{scale:[1.01f,1.01f,1.01f]}, brightness:{block:15, sky:15}}
+data modify entity @s glow_color_override set from storage fdoors:utility temp.glow_color
 
 # Set translation
 data modify storage fdoors:utility xyz set value [0, 0, 0]

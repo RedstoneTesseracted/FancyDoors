@@ -26,6 +26,9 @@ scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 0
 scoreboard players set @s fdoors.menu.settings.transform.l_rotation.angle 0
 scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 0
 scoreboard players set @s fdoors.menu.settings.transform.r_rotation.angle 0
+scoreboard players set @s fdoors.menu.settings.color.r 0
+scoreboard players set @s fdoors.menu.settings.color.g 99
+scoreboard players set @s fdoors.menu.settings.color.b 0
 
 # Set values if present
 execute if data storage fdoors:utility config{trigger: "range"} run scoreboard players set @s fdoors.menu.settings.trigger 0
@@ -34,6 +37,9 @@ execute if data storage fdoors:utility config{trigger: "item"} run scoreboard pl
 execute if data storage fdoors:utility config.trigger_args.min store result score @s fdoors.menu.settings.range.min run data get storage fdoors:utility config.trigger_args.min
 execute if data storage fdoors:utility config.trigger_args.max store result score @s fdoors.menu.settings.range.max run data get storage fdoors:utility config.trigger_args.max
 execute if data storage fdoors:utility config.duration store result score @s fdoors.menu.settings.duration run data get storage fdoors:utility config.duration
+execute if data storage fdoors:utility config.color.r store result score @s fdoors.menu.settings.color.r run data get storage fdoors:utility config.color.r 99
+execute if data storage fdoors:utility config.color.g store result score @s fdoors.menu.settings.color.g run data get storage fdoors:utility config.color.g 99
+execute if data storage fdoors:utility config.color.b store result score @s fdoors.menu.settings.color.b run data get storage fdoors:utility config.color.b 99
 execute if data storage fdoors:utility config.transform.translation[0] store result score @s fdoors.menu.settings.transform.offset.x run data get storage fdoors:utility config.transform.translation[0] 10.0
 execute if data storage fdoors:utility config.transform.translation[1] store result score @s fdoors.menu.settings.transform.offset.y run data get storage fdoors:utility config.transform.translation[1] 10.0
 execute if data storage fdoors:utility config.transform.translation[2] store result score @s fdoors.menu.settings.transform.offset.z run data get storage fdoors:utility config.transform.translation[2] 10.0

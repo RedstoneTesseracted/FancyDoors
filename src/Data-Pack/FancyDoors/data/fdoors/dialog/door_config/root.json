@@ -57,6 +57,16 @@
         },
         {
             "label": {
+                "translate": "fdoors.menu.edit_color",
+                "fallback": "Outline Color..."
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 6"
+            }
+        },
+        {
+            "label": {
                 "translate": "fdoors.menu.destroy",
                 "fallback": "Remove Door",
                 "color": "red"
