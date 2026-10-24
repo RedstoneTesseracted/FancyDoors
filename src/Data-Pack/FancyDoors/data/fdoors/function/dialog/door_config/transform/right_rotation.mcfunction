@@ -19,7 +19,7 @@ data modify storage fdoors:menu menu.build set value {\
     inputs: [\
         {\
             type: "minecraft:number_range",\
-            key: "x",\
+            key: "angle",\
             label: {\
                 translate: "fdoors.menu.transform.angle",\
                 fallback: "Angle"\

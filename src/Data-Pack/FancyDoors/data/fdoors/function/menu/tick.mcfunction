@@ -78,17 +78,17 @@
 #           X <num*10>
 #           Y <num*10>
 #           Z <num*10>
-#           Back (fdoors.menu.transform.scale=$(x)0$(y)0$(z))
+#           Set (fdoors.menu.transform.scale=$(x)0$(y)0$(z))
 #           Cancel (fdoors.menu.transform.scale=-1)
 #       Left Rotation (fdoors.menu.goto=43)
 #           Axis [x=0|y=1|x=2]
 #           Angle <num, 0-360>
-#           Back (fdoors.menu.transform.rotation=$(angle)$(axis))
+#           Set (fdoors.menu.transform.rotation=$(angle)$(axis))
 #           Cancel (fdoors.menu.transform.rotation=-1)
 #       Right Rotation (fdoors.menu.goto=44)
 #           Axis [x=0|y=1|x=2]
 #           Angle <num, 0-360>
-#           Back (fdoors.menu.transform.rotation=$(angle)$(axis))
+#           Set (fdoors.menu.transform.rotation=$(angle)$(axis))
 #           Cancel (fdoors.menu.transform.rotation=-1)
 #       Back (fdoors.menu.goto=1)
 #   Sounds (fdoors.menu.goto=5)
@@ -101,12 +101,12 @@
 #   Commit (fdoors.menu.goto=-2)
 #   Cancel (fdoors.menu.goto=-3)
 #
-execute if entity @s[tag=fdoors.menu.expect.goto] unless function fdoors:menu/check/goto_enabled run function fdoors:menu/handle/goto
-execute if entity @s[tag=fdoors.menu.expect.duration] unless function fdoors:menu/check/duration_enabled run function fdoors:menu/handle/duration
-execute if entity @s[tag=fdoors.menu.expect.range] unless function fdoors:menu/check/range_enabled run function fdoors:menu/handle/range
-execute if entity @s[tag=fdoors.menu.expect.item] unless function fdoors:menu/check/item_enabled run function fdoors:menu/handle/item
-execute if entity @s[tag=fdoors.menu.expect.block] unless function fdoors:menu/check/block_enabled run function fdoors:menu/handle/block
-execute if entity @s[tag=fdoors.menu.expect.transform.translation] unless function fdoors:menu/check/transform_offset_enabled run function fdoors:menu/handle/transform_offset
-execute if entity @s[tag=fdoors.menu.expect.transform.scale] unless function fdoors:menu/check/transform_scale_enabled run function fdoors:menu/handle/transform_offset
-execute if entity @s[tag=fdoors.menu.expect.transform.left_rotation] unless function fdoors:menu/check/transform_rotation_enabled run function fdoors:menu/handle/transform_left_rotation
-execute if entity @s[tag=fdoors.menu.expect.transform.right_rotation] unless function fdoors:menu/check/transform_rotation_enabled run function fdoors:menu/handle/transform_right_rotation
+execute if entity @s[tag=fdoors.menu.expect.goto] unless function fdoors:menu/check/goto_enabled run return run function fdoors:menu/handle/goto
+execute if entity @s[tag=fdoors.menu.expect.duration] unless function fdoors:menu/check/duration_enabled run return run function fdoors:menu/handle/duration
+execute if entity @s[tag=fdoors.menu.expect.range] unless function fdoors:menu/check/range_enabled run return run function fdoors:menu/handle/range
+execute if entity @s[tag=fdoors.menu.expect.item] unless function fdoors:menu/check/item_enabled run return run function fdoors:menu/handle/item
+execute if entity @s[tag=fdoors.menu.expect.block] unless function fdoors:menu/check/block_enabled run return run function fdoors:menu/handle/block
+execute if entity @s[tag=fdoors.menu.expect.transform.translation] unless function fdoors:menu/check/transform_offset_enabled run return run function fdoors:menu/handle/transform_offset
+execute if entity @s[tag=fdoors.menu.expect.transform.scale] unless function fdoors:menu/check/transform_scale_enabled run return run function fdoors:menu/handle/transform_offset
+execute if entity @s[tag=fdoors.menu.expect.transform.left_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_left_rotation
+execute if entity @s[tag=fdoors.menu.expect.transform.right_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_right_rotation

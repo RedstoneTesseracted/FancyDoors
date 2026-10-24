@@ -92,9 +92,6 @@ for (dirpath, dirnames, filenames) in os.walk(config_dialog_functions_dir):
             print(f"Couldn't find dialog source for {file_path}")
             continue
 
-        with open(file_path + '.bak', mode='w') as wf:
-            wf.write(initial_function)
-
         with open(file_path, mode='w') as wf:
             wf.write(result)
 
