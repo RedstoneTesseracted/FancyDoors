@@ -30,7 +30,6 @@ scoreboard players operation fdoors.x fdoors.local /= fdoors.shift fdoors.local
 
 # Obtain second number
 scoreboard players operation fdoors.y fdoors.local = fdoors.x fdoors.local
-scoreboard players operation fdoors.y fdoors.local *= fdoors.scale fdoors.local
-scoreboard players operation fdoors.y fdoors.local >< fdoors.input fdoors.local
+scoreboard players operation fdoors.y fdoors.local *= fdoors.shift fdoors.local
 scoreboard players operation fdoors.input fdoors.local -= fdoors.y fdoors.local
 scoreboard players operation fdoors.y fdoors.local >< fdoors.input fdoors.local
