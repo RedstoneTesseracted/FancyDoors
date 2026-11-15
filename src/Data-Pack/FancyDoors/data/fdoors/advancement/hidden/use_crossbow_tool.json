@@ -3,7 +3,6 @@
         "requirement": {
             "trigger": "minecraft:shot_crossbow",
             "conditions": {
-                "player": [],
                 "item": {
                     "predicates": {
                         "minecraft:custom_data": {
