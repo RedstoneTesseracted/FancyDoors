@@ -53,9 +53,9 @@ scoreboard players operation fdoors.arrow.z fdoors.local -= fdoors.base.z fdoors
 
 
 # Build new configuration tag
-data modify storage fdoors:utility new_block set value {x:0, y:0, z:0, Name: "", Properties: {}}
-data modify storage fdoors:utility new_block.Name set from entity @s inBlockState.Name
-data modify storage fdoors:utility new_block.Properties set from entity @s inBlockState.Properties
+data modify storage fdoors:utility new_block set value {x:0, y:0, z:0, id: "", properties: {}}
+data modify storage fdoors:utility new_block.id set from entity @s inBlockState.id
+data modify storage fdoors:utility new_block.properties set from entity @s inBlockState.properties
 execute store result storage fdoors:utility new_block.x int 1 run scoreboard players get fdoors.arrow.x fdoors.local
 execute store result storage fdoors:utility new_block.y int 1 run scoreboard players get fdoors.arrow.y fdoors.local
 execute store result storage fdoors:utility new_block.z int 1 run scoreboard players get fdoors.arrow.z fdoors.local

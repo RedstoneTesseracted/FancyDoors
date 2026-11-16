@@ -14,8 +14,12 @@ data modify storage fdoors:utility xyz[0] set from storage fdoors:utility show_b
 data modify storage fdoors:utility xyz[1] set from storage fdoors:utility show_block.y
 data modify storage fdoors:utility xyz[2] set from storage fdoors:utility show_block.z
 data modify entity @s transformation.translation set from storage fdoors:utility xyz
-data modify entity @s block_state.Name set from storage fdoors:utility show_block.Name
-data modify entity @s block_state.Properties set from storage fdoors:utility show_block.Properties
+
+# Set block state
+data modify storage fdoors:utility temp.block_state set value {id: "", properties: {}}
+data modify storage fdoors:utility temp.block_state.id set from storage fdoors:utility show_block.id
+data modify storage fdoors:utility temp.block_state.properties set from storage fdoors:utility show_block.properties
+data modify entity @s block_state set from storage fdoors:utility temp.block_state
 
 # Pair with door base
 scoreboard players operation @s fdoors.owner_uuid1 = fdoors.uuid1 fdoors.local
