@@ -1,0 +1,62 @@
+{
+    "type": "minecraft:multi_action",
+    "title": {
+        "translate": "fdoors.menu.sounds",
+        "fallback": "Sounds"
+    },
+    "inputs": [],
+    "can_close_with_escape": true,
+    "exit_action": {
+        "label": {
+            "translate": "fdoors.menu.back",
+            "fallback": "Back"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.goto set 1"
+        }
+    },
+    "columns": 1,
+    "actions": [
+        {
+            "label": {
+                "translate": "fdoors.menu.sounds.start_opening",
+                "fallback": "Start Opening"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 51"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.sounds.finish_opening",
+                "fallback": "Finish Opening"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 52"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.sounds.start_closing",
+                "fallback": "Start Closing"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 53"
+            }
+        },
+        {
+            "label": {
+                "translate": "fdoors.menu.sounds.finish_closing",
+                "fallback": "Finish Closing"
+            },
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger fdoors.menu.goto set 54"
+            }
+        }
+    ]
+}

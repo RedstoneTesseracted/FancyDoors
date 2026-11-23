@@ -128,3 +128,7 @@ execute if entity @s[tag=fdoors.menu.expect.transform.left_rotation] unless func
 execute if entity @s[tag=fdoors.menu.expect.transform.right_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_right_rotation
 execute if entity @s[tag=fdoors.menu.expect.color] unless function fdoors:menu/check/color_enabled run return run function fdoors:menu/handle/color
 execute if entity @s[tag=fdoors.menu.expect.destroy] unless function fdoors:menu/check/destroy_enabled run return run function fdoors:menu/handle/destroy
+execute if entity @s[tag=fdoors.menu.expect.sounds.start_opening] unless function fdoors:menu/check/sounds/start_opening run return run function fdoors:menu/handle/sounds/start_opening
+execute if entity @s[tag=fdoors.menu.expect.sounds.finish_opening] unless function fdoors:menu/check/sounds/finish_opening run return run function fdoors:menu/handle/sounds/finish_opening
+execute if entity @s[tag=fdoors.menu.expect.sounds.start_closing] unless function fdoors:menu/check/sounds/start_closing run return run function fdoors:menu/handle/sounds/start_closing
+execute if entity @s[tag=fdoors.menu.expect.sounds.finish_closing] unless function fdoors:menu/check/sounds/finish_closing run return run function fdoors:menu/handle/sounds/finish_closing

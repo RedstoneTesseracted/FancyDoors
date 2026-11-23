@@ -49,6 +49,22 @@ scoreboard objectives add fdoors.menu.settings.transform.r_rotation.angle dummy
 scoreboard objectives add fdoors.menu.settings.color.r dummy
 scoreboard objectives add fdoors.menu.settings.color.g dummy
 scoreboard objectives add fdoors.menu.settings.color.b dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_opening.sound dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_opening.volume dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_opening.pitch dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_opening.update dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_opening.sound dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_opening.volume dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_opening.pitch dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_opening.update dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_closing.sound dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_closing.volume dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_closing.pitch dummy
+scoreboard objectives add fdoors.menu.settings.sounds.start_closing.update dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_closing.sound dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_closing.volume dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_closing.pitch dummy
+scoreboard objectives add fdoors.menu.settings.sounds.finish_closing.update dummy
 
 # Dialog trigger scores
 scoreboard objectives add fdoors.quits minecraft.custom:minecraft.leave_game
@@ -62,7 +78,10 @@ scoreboard objectives add fdoors.menu.transform.scale trigger
 scoreboard objectives add fdoors.menu.transform.rotation trigger
 scoreboard objectives add fdoors.menu.color trigger
 scoreboard objectives add fdoors.menu.destroy trigger
-scoreboard objectives add fdoors.menu.sound_preset trigger
+scoreboard objectives add fdoors.menu.sounds.start_opening trigger
+scoreboard objectives add fdoors.menu.sounds.finish_opening trigger
+scoreboard objectives add fdoors.menu.sounds.start_closing trigger
+scoreboard objectives add fdoors.menu.sounds.finish_closing trigger
 
 # Constant numbers
 scoreboard players set 4 fdoors.number 4

@@ -8,6 +8,11 @@ scoreboard players reset @s fdoors.menu.transform.offset
 scoreboard players reset @s fdoors.menu.transform.scale
 scoreboard players reset @s fdoors.menu.transform.rotation
 scoreboard players reset @s fdoors.menu.color
+scoreboard players reset @s fdoors.menu.destroy
+scoreboard players reset @s fdoors.menu.sounds.start_opening
+scoreboard players reset @s fdoors.menu.sounds.finish_opening
+scoreboard players reset @s fdoors.menu.sounds.start_closing
+scoreboard players reset @s fdoors.menu.sounds.finish_closing
 
 # Reset tags
 tag @s remove fdoors.menu.open
@@ -23,3 +28,8 @@ tag @s remove fdoors.menu.expect.transform.translation.z
 tag @s remove fdoors.menu.expect.transform.right_rotation
 tag @s remove fdoors.menu.expect.transform.scale
 tag @s remove fdoors.menu.expect.color
+tag @s remove fdoors.menu.expect.destroy
+tag @s remove fdoors.menu.expect.sounds.start_opening
+tag @s remove fdoors.menu.expect.sounds.finish_opening
+tag @s remove fdoors.menu.expect.sounds.start_closing
+tag @s remove fdoors.menu.expect.sounds.finish_closing

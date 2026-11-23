@@ -18,6 +18,10 @@ execute if score @s fdoors.menu.goto matches 42 run return run function fdoors:m
 execute if score @s fdoors.menu.goto matches 43 run return run function fdoors:menu/door_config/transform/left_rotation
 execute if score @s fdoors.menu.goto matches 44 run return run function fdoors:menu/door_config/transform/right_rotation
 execute if score @s fdoors.menu.goto matches 5 run return run function fdoors:menu/door_config/sounds
+execute if score @s fdoors.menu.goto matches 51 run return run function fdoors:menu/door_config/sounds/start_opening
+execute if score @s fdoors.menu.goto matches 52 run return run function fdoors:menu/door_config/sounds/finish_opening
+execute if score @s fdoors.menu.goto matches 53 run return run function fdoors:menu/door_config/sounds/start_closing
+execute if score @s fdoors.menu.goto matches 54 run return run function fdoors:menu/door_config/sounds/finish_closing
 execute if score @s fdoors.menu.goto matches 6 run return run function fdoors:menu/door_config/color
 execute if score @s fdoors.menu.goto matches -1 run return run function fdoors:menu/door_config/confirm_destroy
 execute if score @s fdoors.menu.goto matches -2 run return run function fdoors:menu/commit_values

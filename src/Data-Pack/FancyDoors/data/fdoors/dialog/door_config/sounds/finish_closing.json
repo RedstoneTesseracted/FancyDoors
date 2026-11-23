@@ -1,0 +1,158 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.menu.sounds.finish_closing.title",
+        "fallback": "Sounds - Finish Closing"
+    },
+    "inputs": [
+        {
+            "type": "minecraft:single_option",
+            "key": "sound",
+            "label": {
+                "translate": "fdoors.menu.sounds.sound_preset",
+                "fallback": "Sound"
+            },
+            "options": [
+                {
+                    "id": "0",
+                    "display": "minecraft:entity.iron_golem.step",
+                    "initial": false
+                },
+                {
+                    "id": "1",
+                    "display": "minecraft:entity.iron_golem.attack",
+                    "initial": false
+                },
+                {
+                    "id": "2",
+                    "display": "minecraft:block.chest.close",
+                    "initial": false
+                },
+                {
+                    "id": "3",
+                    "display": "minecraft:block.chest.open",
+                    "initial": false
+                },
+                {
+                    "id": "4",
+                    "display": "minecraft:block.wooden_door.close",
+                    "initial": false
+                },
+                {
+                    "id": "5",
+                    "display": "minecraft:block.wooden_door.open",
+                    "initial": false
+                },
+                {
+                    "id": "6",
+                    "display": "minecraft:block.iron_door.close",
+                    "initial": false
+                },
+                {
+                    "id": "7",
+                    "display": "minecraft:block.iron_door.open",
+                    "initial": false
+                },
+                {
+                    "id": "8",
+                    "display": "minecraft:block.piston.contract",
+                    "initial": false
+                },
+                {
+                    "id": "9",
+                    "display": "minecraft:block.piston.extend",
+                    "initial": false
+                },
+                {
+                    "id": "10",
+                    "display": "minecraft:block.fence_gate.close",
+                    "initial": false
+                },
+                {
+                    "id": "11",
+                    "display": "minecraft:block.fence_gate.open",
+                    "initial": false
+                },
+                {
+                    "id": "12",
+                    "display": "minecraft:block.vault.close_shutter",
+                    "initial": false
+                },
+                {
+                    "id": "13",
+                    "display": "minecraft:block.vault.open_shutter",
+                    "initial": false
+                },
+                {
+                    "id": "14",
+                    "display": "minecraft:entity.enderman.teleport",
+                    "initial": false
+                },
+                {
+                    "id": "15",
+                    "display": "minecraft:block.fire.extinguish",
+                    "initial": false
+                }
+            ]
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "pitch",
+            "label": {
+                "translate": "fdoors.menu.sounds.pitch",
+                "fallback": "Pitch * 10",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.sounds.pitch.help",
+                        "fallback": "The number shown here is divided by 10 before being passed to the /playsound command"
+                    }
+                }
+            },
+            "start": 0,
+            "end": 20,
+            "step": 1,
+            "initial": 10
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "volume",
+            "label": {
+                "translate": "fdoors.menu.sounds.volume",
+                "fallback": "Volume * 10",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.sounds.volume.help",
+                        "fallback": "The number shown here is divided by 10 before being passed to the /playsound command"
+                    }
+                }
+            },
+            "start": 0,
+            "end": 99,
+            "step": 1,
+            "initial": 10
+        }
+    ],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.set",
+            "fallback": "Set"
+        },
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "trigger fdoors.menu.sounds.finish_closing set $(sound)0$(volume)0$(pitch)"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.sounds.finish_closing set -1"
+        }
+    }
+}

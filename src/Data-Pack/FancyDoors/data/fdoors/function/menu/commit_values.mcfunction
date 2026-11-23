@@ -34,6 +34,31 @@ execute store result storage fdoors:utility config.color.r float 0.0101010101010
 execute store result storage fdoors:utility config.color.g float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.g
 execute store result storage fdoors:utility config.color.b float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.b
 
+execute if score @s fdoors.menu.settings.sounds.start_opening.update matches 1 store result storage fdoors:utility config.sounds.start_open.pitch double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.start_opening.pitch
+execute if score @s fdoors.menu.settings.sounds.start_opening.update matches 1 store result storage fdoors:utility config.sounds.start_open.volume double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.start_opening.volume
+execute if score @s fdoors.menu.settings.sounds.finish_opening.update matches 1 store result storage fdoors:utility config.sounds.finish_open.pitch double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.finish_opening.pitch
+execute if score @s fdoors.menu.settings.sounds.finish_opening.update matches 1 store result storage fdoors:utility config.sounds.finish_open.volume double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.finish_opening.volume
+execute if score @s fdoors.menu.settings.sounds.start_closing.update matches 1 store result storage fdoors:utility config.sounds.start_close.pitch double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.start_closing.pitch
+execute if score @s fdoors.menu.settings.sounds.start_closing.update matches 1 store result storage fdoors:utility config.sounds.start_close.volume double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.start_closing.volume
+execute if score @s fdoors.menu.settings.sounds.finish_closing.update matches 1 store result storage fdoors:utility config.sounds.finish_close.pitch double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.finish_closing.pitch
+execute if score @s fdoors.menu.settings.sounds.finish_closing.update matches 1 store result storage fdoors:utility config.sounds.finish_close.volume double 0.1 run scoreboard players get @s fdoors.menu.settings.sounds.finish_closing.volume
+
+scoreboard players operation fdoors.sound fdoors.local = @s fdoors.menu.settings.sounds.start_opening.sound
+function fdoors:menu/integer_to_sound_preset
+execute if score @s fdoors.menu.settings.sounds.start_opening.update matches 1 run data modify storage fdoors:utility config.sounds.start_open.sound set from storage fdoors:utility temp.sound
+
+scoreboard players operation fdoors.sound fdoors.local = @s fdoors.menu.settings.sounds.finish_opening.sound
+function fdoors:menu/integer_to_sound_preset
+execute if score @s fdoors.menu.settings.sounds.finish_opening.update matches 1 run data modify storage fdoors:utility config.sounds.finish_open.sound set from storage fdoors:utility temp.sound
+
+scoreboard players operation fdoors.sound fdoors.local = @s fdoors.menu.settings.sounds.start_closing.sound
+function fdoors:menu/integer_to_sound_preset
+execute if score @s fdoors.menu.settings.sounds.start_closing.update matches 1 run data modify storage fdoors:utility config.sounds.start_close.sound set from storage fdoors:utility temp.sound
+
+scoreboard players operation fdoors.sound fdoors.local = @s fdoors.menu.settings.sounds.finish_closing.sound
+function fdoors:menu/integer_to_sound_preset
+execute if score @s fdoors.menu.settings.sounds.finish_closing.update matches 1 run data modify storage fdoors:utility config.sounds.finish_close.sound set from storage fdoors:utility temp.sound
+
 scoreboard players operation @s fdoors.menu.settings.color.r *= 255 fdoors.number
 scoreboard players operation @s fdoors.menu.settings.color.r /= 99 fdoors.number
 scoreboard players operation @s fdoors.menu.settings.color.g *= 255 fdoors.number
@@ -41,7 +66,6 @@ scoreboard players operation @s fdoors.menu.settings.color.g /= 99 fdoors.number
 scoreboard players operation @s fdoors.menu.settings.color.b *= 255 fdoors.number
 scoreboard players operation @s fdoors.menu.settings.color.b /= 99 fdoors.number
 scoreboard players operation fdoors.glow_color fdoors.local = @s fdoors.menu.settings.color.r
-tellraw @a {score: {name: "@s", objective: "fdoors.menu.settings.color.r"}}
 scoreboard players operation fdoors.glow_color fdoors.local *= 256 fdoors.number
 scoreboard players operation fdoors.glow_color fdoors.local += @s fdoors.menu.settings.color.g
 scoreboard players operation fdoors.glow_color fdoors.local *= 256 fdoors.number

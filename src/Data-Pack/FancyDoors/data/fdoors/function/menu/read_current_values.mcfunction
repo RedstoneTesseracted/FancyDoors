@@ -26,6 +26,22 @@ scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 0
 scoreboard players set @s fdoors.menu.settings.transform.l_rotation.angle 0
 scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 0
 scoreboard players set @s fdoors.menu.settings.transform.r_rotation.angle 0
+scoreboard players set @s fdoors.menu.settings.sounds.start_opening.pitch 10
+scoreboard players set @s fdoors.menu.settings.sounds.start_opening.volume 10
+scoreboard players set @s fdoors.menu.settings.sounds.start_opening.sound 0
+scoreboard players set @s fdoors.menu.settings.sounds.start_opening.update 0
+scoreboard players set @s fdoors.menu.settings.sounds.finish_opening.pitch 10
+scoreboard players set @s fdoors.menu.settings.sounds.finish_opening.volume 10
+scoreboard players set @s fdoors.menu.settings.sounds.finish_opening.sound 0
+scoreboard players set @s fdoors.menu.settings.sounds.finish_opening.update 0
+scoreboard players set @s fdoors.menu.settings.sounds.start_closing.pitch 10
+scoreboard players set @s fdoors.menu.settings.sounds.start_closing.volume 10
+scoreboard players set @s fdoors.menu.settings.sounds.start_closing.sound 0
+scoreboard players set @s fdoors.menu.settings.sounds.start_closing.update 0
+scoreboard players set @s fdoors.menu.settings.sounds.finish_closing.pitch 10
+scoreboard players set @s fdoors.menu.settings.sounds.finish_closing.volume 10
+scoreboard players set @s fdoors.menu.settings.sounds.finish_closing.sound 0
+scoreboard players set @s fdoors.menu.settings.sounds.finish_closing.update 0
 scoreboard players set @s fdoors.menu.settings.color.r 0
 scoreboard players set @s fdoors.menu.settings.color.g 99
 scoreboard players set @s fdoors.menu.settings.color.b 0
@@ -54,5 +70,29 @@ execute if data storage fdoors:utility config.transform.right_rotation{axis: "y"
 execute if data storage fdoors:utility config.transform.right_rotation{axis: "z"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 2
 execute if data storage fdoors:utility config.transform.left_rotation.angle store result score @s fdoors.menu.settings.transform.l_rotation.angle run data get storage fdoors:utility config.transform.left_rotation.angle 57.29577951308232
 execute if data storage fdoors:utility config.transform.right_rotation.angle store result score @s fdoors.menu.settings.transform.r_rotation.angle run data get storage fdoors:utility config.transform.right_rotation.angle 57.29577951308232
+execute if data storage fdoors:utility config.sounds.start_open.pitch store result score @s fdoors.menu.settings.sounds.start_opening.pitch run data get storage fdoors:utility config.sounds.start_open.pitch 10.0
+execute if data storage fdoors:utility config.sounds.start_open.volume store result score @s fdoors.menu.settings.sounds.start_opening.volume run data get storage fdoors:utility config.sounds.start_open.volume 10.0
+execute if data storage fdoors:utility config.sounds.finish_open.pitch store result score @s fdoors.menu.settings.sounds.finish_opening.pitch run data get storage fdoors:utility config.sounds.finish_open.pitch 10.0
+execute if data storage fdoors:utility config.sounds.finish_open.volume store result score @s fdoors.menu.settings.sounds.finish_opening.volume run data get storage fdoors:utility config.sounds.finish_open.volume 10.0
+execute if data storage fdoors:utility config.sounds.start_close.pitch store result score @s fdoors.menu.settings.sounds.start_closing.pitch run data get storage fdoors:utility config.sounds.start_close.pitch 10.0
+execute if data storage fdoors:utility config.sounds.start_close.volume store result score @s fdoors.menu.settings.sounds.start_closing.volume run data get storage fdoors:utility config.sounds.start_close.volume 10.0
+execute if data storage fdoors:utility config.sounds.finish_close.pitch store result score @s fdoors.menu.settings.sounds.finish_closing.pitch run data get storage fdoors:utility config.sounds.finish_close.pitch 10.0
+execute if data storage fdoors:utility config.sounds.finish_close.volume store result score @s fdoors.menu.settings.sounds.finish_closing.volume run data get storage fdoors:utility config.sounds.finish_close.volume 10.0
+
+data remove storage fdoors:utility temp.sound
+data modify storage fdoors:utility temp.sound set from storage fdoors:utility config.sounds.start_open.sound
+execute store result score @s fdoors.menu.settings.sounds.start_opening.sound run function fdoors:menu/sound_preset_to_integer
+
+data remove storage fdoors:utility temp.sound
+data modify storage fdoors:utility temp.sound set from storage fdoors:utility config.sounds.finish_open.sound
+execute store result score @s fdoors.menu.settings.sounds.finish_opening.sound run function fdoors:menu/sound_preset_to_integer
+
+data remove storage fdoors:utility temp.sound
+data modify storage fdoors:utility temp.sound set from storage fdoors:utility config.sounds.start_close.sound
+execute store result score @s fdoors.menu.settings.sounds.start_closing.sound run function fdoors:menu/sound_preset_to_integer
+
+data remove storage fdoors:utility temp.sound
+data modify storage fdoors:utility temp.sound set from storage fdoors:utility config.sounds.finish_close.sound
+execute store result score @s fdoors.menu.settings.sounds.finish_closing.sound run function fdoors:menu/sound_preset_to_integer
 
 return 1
