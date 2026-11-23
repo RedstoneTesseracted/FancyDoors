@@ -72,5 +72,11 @@ scoreboard players set 255 fdoors.number 255
 scoreboard players set 256 fdoors.number 256
 scoreboard players set 1000 fdoors.number 1000
 
+# Global configuration scores
+scoreboard objectives add fdoors.config dummy
+execute unless score fdoors.enable_bedrock fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_bedrock fdoors.config 0
+execute unless score fdoors.enable_barriers fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_barriers fdoors.config 0
+execute unless score fdoors.enable_block_entities fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_block_entities fdoors.config 0
+
 # Launch the periodic fixer function
 function fdoors:periodic_fix
