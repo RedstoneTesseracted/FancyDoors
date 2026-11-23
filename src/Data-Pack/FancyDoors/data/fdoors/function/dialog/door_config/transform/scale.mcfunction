@@ -13,7 +13,7 @@ data modify storage fdoors:menu menu.build set value {\
         type: "minecraft:plain_message",\
         contents: {\
             translate: "fdoors.menu.transform.scale.help",\
-            fallback: "Display entity scale in open state.  Results here will be divided by 10."\
+            fallback: "Display entity scale when in open state.  Results here will be divided by 10."\
         }\
     },\
     inputs: [\

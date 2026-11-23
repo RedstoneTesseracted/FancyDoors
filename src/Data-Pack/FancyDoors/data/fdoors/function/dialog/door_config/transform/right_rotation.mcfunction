@@ -13,7 +13,7 @@ data modify storage fdoors:menu menu.build set value {\
         type: "minecraft:plain_message",\
         contents: {\
             translate: "fdoors.menu.transform.right_rotation.help",\
-            fallback: "Display entity right-rotation in open state."\
+            fallback: "Display entity right-rotation when in open state."\
         }\
     },\
     inputs: [\
