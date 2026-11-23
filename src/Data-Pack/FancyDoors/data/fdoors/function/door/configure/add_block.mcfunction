@@ -4,7 +4,7 @@
 
 # Compile block state string if this block has properties
 data modify storage fdoors:utility state_string set value {value: ""}
-execute store result score fdoors.property_count fdoors.local run data get storage fdoors:utility new_block.Properties
+execute store result score fdoors.property_count fdoors.local run data get storage fdoors:utility new_block.properties
 execute if score fdoors.property_count fdoors.local matches 1.. run function fdoors:door/configure/compile_block_state/build_block_state_string
 data modify storage fdoors:utility new_block.state_string set from storage fdoors:utility state_string.value
 scoreboard players reset fdoors.property_count fdoors.local

@@ -3,7 +3,7 @@ This script generates a function capable of building out the block state string
 used in the /setblock command.
 
 Unfortunately, Minecraft does not give us a way of looping over the keys of an
-NBT compound.  Without a decent way of converting a Properties NBT tag into a
+NBT compound.  Without a decent way of converting a properties NBT tag into a
 block, we'll have to check for the presence of every single block state
 manually.
 """
@@ -44,7 +44,7 @@ with open(function_path, mode='w') as wf:
 
     # Write a command for each block state type
     for state in block_states:
-        wf.write(f'execute if data storage fdoors:utility new_block.Properties.{state} run function fdoors:door/configure/compile_block_state/append {{state:"{state}"}}\n')
+        wf.write(f'execute if data storage fdoors:utility new_block.properties.{state} run function fdoors:door/configure/compile_block_state/append {{state:"{state}"}}\n')
 
     # Additional string manipulation (remove trailing comma, add square brackets)
     wf.write("""
