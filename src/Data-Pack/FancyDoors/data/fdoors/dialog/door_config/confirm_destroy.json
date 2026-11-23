@@ -1,0 +1,37 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.menu.destroy_confirm",
+        "fallback": "Remove Door"
+    },
+    "body": {
+        "type": "minecraft:plain_message",
+        "contents": {
+            "translate": "fdoors.menu.destroy_confirm.description",
+            "fallback": "Are you sure you want to destroy this door?"
+        }
+    },
+    "inputs": [],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.destroy",
+            "fallback": "Remove Door",
+            "color": "red"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.destroy set 1"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        },
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger fdoors.menu.destroy set -1"
+        }
+    }
+}

@@ -61,6 +61,7 @@ scoreboard objectives add fdoors.menu.transform.offset trigger
 scoreboard objectives add fdoors.menu.transform.scale trigger
 scoreboard objectives add fdoors.menu.transform.rotation trigger
 scoreboard objectives add fdoors.menu.color trigger
+scoreboard objectives add fdoors.menu.destroy trigger
 
 # Constant numbers
 scoreboard players set 4 fdoors.number 4

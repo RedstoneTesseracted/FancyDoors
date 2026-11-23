@@ -127,3 +127,4 @@ execute if entity @s[tag=fdoors.menu.expect.transform.scale] unless function fdo
 execute if entity @s[tag=fdoors.menu.expect.transform.left_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_left_rotation
 execute if entity @s[tag=fdoors.menu.expect.transform.right_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_right_rotation
 execute if entity @s[tag=fdoors.menu.expect.color] unless function fdoors:menu/check/color_enabled run return run function fdoors:menu/handle/color
+execute if entity @s[tag=fdoors.menu.expect.destroy] unless function fdoors:menu/check/destroy_enabled run return run function fdoors:menu/handle/destroy
