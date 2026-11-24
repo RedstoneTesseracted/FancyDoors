@@ -6,61 +6,64 @@
                 {
                     "type": "minecraft:item",
                     "name": "minecraft:crossbow",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_components",
-                            "components": {
-                                "minecraft:item_name": {
-                                    "translate": "fdoors.item.block_tool",
-                                    "fallback": "Block Selector"
-                                },
-                                "minecraft:rarity": "epic",
-                                "minecraft:lore": [
-                                    {
-                                        "translate": "fdoors.block_tool.usage1",
-                                        "fallback": " Shoot at blocks to add them to the door entity",
-                                        "color": "green",
-                                        "italic": false
+                    "modifier": {
+                        "type": "minecraft:sequence",
+                        "functions": [
+                            {
+                                "type": "minecraft:set_components",
+                                "components": {
+                                    "minecraft:item_name": {
+                                        "translate": "fdoors.item.block_tool",
+                                        "fallback": "Block Selector"
                                     },
-                                    {
-                                        "translate": "fdoors.block_tool.usage2",
-                                        "fallback": " Punch door entity to begin adding blocks",
-                                        "color": "green",
-                                        "italic": false
-                                    },
-                                    {
-                                        "translate": "fdoors.block_tool.usage3",
-                                        "fallback": " Stop holding to finish adding blocks",
-                                        "color": "green",
-                                        "italic": false
-                                    }
-                                ],
-                                "minecraft:custom_data": {
-                                    "fdoors": {
-                                        "tool": true
-                                    }
-                                },
-                                "minecraft:charged_projectiles": [
-                                    {
-                                        "id": "minecraft:arrow",
-                                        "components": {
-                                            "minecraft:item_name": {
-                                                "translate": "fdoors.item.selector_arrow",
-                                                "fallback": "Block Selector Arrow",
-                                                "color": "red"
-                                            },
-                                            "minecraft:custom_data": {
-                                                "fdoors": {
-                                                    "selector_arrow": true
-                                                }
-                                            }
+                                    "minecraft:rarity": "epic",
+                                    "minecraft:lore": [
+                                        {
+                                            "translate": "fdoors.block_tool.usage1",
+                                            "fallback": " Shoot at blocks to add them to the door entity",
+                                            "color": "green",
+                                            "italic": false
                                         },
-                                        "count": 1
-                                    }
-                                ]
+                                        {
+                                            "translate": "fdoors.block_tool.usage2",
+                                            "fallback": " Punch door entity to begin adding blocks",
+                                            "color": "green",
+                                            "italic": false
+                                        },
+                                        {
+                                            "translate": "fdoors.block_tool.usage3",
+                                            "fallback": " Stop holding to finish adding blocks",
+                                            "color": "green",
+                                            "italic": false
+                                        }
+                                    ],
+                                    "minecraft:custom_data": {
+                                        "fdoors": {
+                                            "tool": true
+                                        }
+                                    },
+                                    "minecraft:charged_projectiles": [
+                                        {
+                                            "id": "minecraft:arrow",
+                                            "components": {
+                                                "minecraft:item_name": {
+                                                    "translate": "fdoors.item.selector_arrow",
+                                                    "fallback": "Block Selector Arrow",
+                                                    "color": "red"
+                                                },
+                                                "minecraft:custom_data": {
+                                                    "fdoors": {
+                                                        "selector_arrow": true
+                                                    }
+                                                }
+                                            },
+                                            "count": 1
+                                        }
+                                    ]
+                                }
                             }
-                        }
-                    ]
+                        ]
+                    }
                 }
             ]
         }
