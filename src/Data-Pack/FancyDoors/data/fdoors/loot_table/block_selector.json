@@ -59,7 +59,9 @@
                                             },
                                             "count": 1
                                         }
-                                    ]
+                                    ],
+                                    "!minecraft:enchantable": {},
+                                    "minecraft:enchantment_glint_override": true
                                 }
                             }
                         ]
