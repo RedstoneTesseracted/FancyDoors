@@ -1,0 +1,10 @@
+{
+	"criteria":{
+		"setup":{
+			"trigger":"minecraft:tick"
+		}
+	},
+	"rewards":{
+		"function": "fdoors:player_init"
+	}
+}

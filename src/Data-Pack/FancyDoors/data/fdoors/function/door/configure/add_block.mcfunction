@@ -2,6 +2,11 @@
 # This is called from fdoors:door/configure/toggle_block
 # This is run BY and AT the base door entity
 
+# Do not add disabled blocks
+execute if score fdoors.enable_bedrock fdoors.config matches 0 if data storage fdoors:utility new_block{id: "minecraft:bedrock"} run return run title @p[tag=fdoors.add_block.player_context] actionbar {translate: "fdoors.messages.add_block_fail.bedrock", fallback: "Adding bedrock to doors is disabled"}
+execute if score fdoors.enable_barriers fdoors.config matches 0 if data storage fdoors:utility new_block{id: "minecraft:barrier"} run return run title @p[tag=fdoors.add_block.player_context] actionbar {translate: "fdoors.messages.add_block_fail.barrier", fallback: "Adding barrier blocks to doors is disabled"}
+execute if score fdoors.enable_block_entities fdoors.config matches 0 if score fdoors.is_block_entity fdoors.local matches 1 run return run title @p[tag=fdoors.add_block.player_context] actionbar {translate: "fdoors.messages.add_block_fail.block_entity", fallback: "Adding block entities to doors is disabled"}
+
 # Compile block state string if this block has properties
 data modify storage fdoors:utility state_string set value {value: ""}
 execute store result score fdoors.property_count fdoors.local run data get storage fdoors:utility new_block.properties

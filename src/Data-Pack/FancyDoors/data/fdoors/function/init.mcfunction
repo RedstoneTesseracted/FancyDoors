@@ -97,6 +97,11 @@ scoreboard objectives add fdoors.config dummy
 execute unless score fdoors.enable_bedrock fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_bedrock fdoors.config 0
 execute unless score fdoors.enable_barriers fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_barriers fdoors.config 0
 execute unless score fdoors.enable_block_entities fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_block_entities fdoors.config 0
+execute unless score fdoors.enable_welcome_message fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_welcome_message fdoors.config 1
+
+# Player configuration scores
+scoreboard objectives add fdoors.extended_menu dummy
+execute as @a unless score @s fdoors.extended_menu matches -2147483648..2147483647 run scoreboard players set @s fdoors.extended_menu 0
 
 # Launch the periodic fixer function
 function fdoors:periodic_fix

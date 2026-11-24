@@ -45,6 +45,9 @@ scoreboard players operation fdoors.arrow.x fdoors.local /= 10 fdoors.local
 scoreboard players operation fdoors.arrow.y fdoors.local /= 10 fdoors.local
 scoreboard players operation fdoors.arrow.z fdoors.local /= 10 fdoors.local
 
+# Check if the arrow hit a block entity (this is used in add_block to prevent block entities from being added to the door)
+scoreboard players set fdoors.is_block_entity fdoors.local 0
+execute if score fdoors.enable_block_entities fdoors.config matches 0 run function fdoors:tool/check_block_entity
 
 # Calculate offset between the two positions so that we can appropriately configure the transformation
 scoreboard players operation fdoors.arrow.x fdoors.local -= fdoors.base.x fdoors.local
@@ -62,8 +65,11 @@ execute store result storage fdoors:utility new_block.y int 1 run scoreboard pla
 execute store result storage fdoors:utility new_block.z int 1 run scoreboard players get fdoors.arrow.z fdoors.local
 
 # Hand the new block over to the door for handling
+tag @a[tag=fdoors.add_block.player_context] remove fdoors.add_block.player_context
+execute on origin run tag @s add fdoors.add_block.player_context
 execute as @e[tag=fdoors.door.context,limit=1] at @s run function fdoors:door/configure/toggle_block
 data remove storage fdoors:utility new_block
+tag @a[tag=fdoors.add_block.player_context] remove fdoors.add_block.player_context
 
 
 # Destroy this arrow immediately
