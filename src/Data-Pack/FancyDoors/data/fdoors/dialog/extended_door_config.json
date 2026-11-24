@@ -1,0 +1,535 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.extended_menu.title",
+        "fallback": "Extended Door Config"
+    },
+    "inputs": [
+        {
+            "type": "minecraft:single_option",
+            "key": "trigger_type",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger_type",
+                "fallback": "Trigger Type"
+            },
+            "options": [
+                {
+                    "id": "range",
+                    "initial": false
+                },
+                {
+                    "id": "block",
+                    "initial": false
+                },
+                {
+                    "id": "item",
+                    "initial": false
+                },
+                {
+                    "id": "predicate",
+                    "initial": false
+                }
+            ]
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "trigger_range_min",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger.min",
+                "fallback": "Trigger Minimum Range",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.extended_menu.trigger.min.help",
+                        "fallback": "Only applies when \"trigger type\" is \"range\" or \"item\""
+                    }
+                }
+            },
+            "start": 0,
+            "end": 20,
+            "step": 0.1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "trigger_range_max",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger.max",
+                "fallback": "Trigger Maximum Range",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.extended_menu.trigger.max.help",
+                        "fallback": "Only applies when \"trigger type\" is \"range\" or \"item\""
+                    }
+                }
+            },
+            "start": 0,
+            "end": 20,
+            "step": 0.1,
+            "initial": 5
+        },
+        {
+            "type": "minecraft:text",
+            "key": "trigger_block",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger.block",
+                "fallback": "Trigger Block State",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.extended_menu.trigger.block.help",
+                        "fallback": "Only applies when \"trigger type\" is \"block\""
+                    }
+                }
+            },
+            "initial": "minecraft:air",
+            "max_length": 64
+        },
+        {
+            "type": "minecraft:text",
+            "key": "trigger_item",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger.item",
+                "fallback": "Trigger Item ID",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.extended_menu.trigger.item.help",
+                        "fallback": "Only applies when \"trigger type\" is \"item\""
+                    }
+                }
+            },
+            "initial": "",
+            "max_length": 64
+        },
+        {
+            "type": "minecraft:single_option",
+            "key": "trigger_item_components_set",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger.item.components",
+                "fallback": "Trigger Item Components",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.extended_menu.trigger.item.components.help",
+                        "fallback": "Only applies when \"trigger type\" is \"item\""
+                    }
+                }
+            },
+            "options": [
+                {
+                    "id": "0",
+                    "display": {
+                        "translate": "fdoors.extended_menu.trigger.item.components.no_change",
+                        "fallback": "No Change"
+                    },
+                    "initial": false
+                },
+                {
+                    "id": "1",
+                    "display": {
+                        "translate": "fdoors.extended_menu.trigger.item.components.copy_mainhand",
+                        "fallback": "Copy From Main Hand"
+                    },
+                    "initial": false
+                },
+                {
+                    "id": "2",
+                    "display": {
+                        "translate": "fdoors.extended_menu.trigger.item.components.copy_offhand",
+                        "fallback": "Copy From Off-Hand"
+                    },
+                    "initial": false
+                },
+                {
+                    "id": "3",
+                    "display": {
+                        "translate": "fdoors.extended_menu.trigger.item.components.clear",
+                        "fallback": "Clear",
+                        "color": "red"
+                    },
+                    "initial": false
+                }
+            ]
+        },
+        {
+            "type": "minecraft:text",
+            "key": "trigger_predicate",
+            "label": {
+                "translate": "fdoors.extended_menu.trigger.predicate",
+                "fallback": "Trigger Predicate",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.extended_menu.trigger.predicate.help",
+                        "fallback": "Only applies when \"trigger type\" is \"predicate\""
+                    }
+                }
+            },
+            "initial": ""
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "duration",
+            "label": {
+                "translate": "fdoors.extended_menu.duration",
+                "fallback": "Duration"
+            },
+            "start": 0,
+            "end": 120,
+            "step": 1,
+            "initial": 20
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_offset_x",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.offset.x",
+                "fallback": "Transform Offset X"
+            },
+            "start": -20,
+            "end": 20,
+            "step": 0.1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_offset_y",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.offset.y",
+                "fallback": "Transform Offset Y"
+            },
+            "start": -20,
+            "end": 20,
+            "step": 0.1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_offset_z",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.offset.z",
+                "fallback": "Transform Offset Z"
+            },
+            "start": -20,
+            "end": 20,
+            "step": 0.1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_scale_x",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.scale.x",
+                "fallback": "Transform Scale X"
+            },
+            "start": 0,
+            "end": 10,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_scale_y",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.scale.y",
+                "fallback": "Transform Scale Y"
+            },
+            "start": 0,
+            "end": 10,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_scale_z",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.scale.z",
+                "fallback": "Transform Scale Z"
+            },
+            "start": 0,
+            "end": 10,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:single_option",
+            "key": "transform_left_rotation_axis",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.left_rotation.axis",
+                "fallback": "Transform Left Rotation Axis"
+            },
+            "options": [
+                {
+                    "id": "x",
+                    "display": "X",
+                    "initial": false
+                },
+                {
+                    "id": "y",
+                    "display": "Y",
+                    "initial": false
+                },
+                {
+                    "id": "z",
+                    "display": "Z",
+                    "initial": false
+                }
+            ]
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_left_rotation_angle",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.left_rotation.angle",
+                "fallback": "Transform Left Rotation Angle"
+            },
+            "start": 0,
+            "end": 360,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:single_option",
+            "key": "transform_right_rotation_axis",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.right_rotation.axis",
+                "fallback": "Transform Right Rotation Axis"
+            },
+            "options": [
+                {
+                    "id": "x",
+                    "display": "X",
+                    "initial": false
+                },
+                {
+                    "id": "y",
+                    "display": "Y",
+                    "initial": false
+                },
+                {
+                    "id": "z",
+                    "display": "Z",
+                    "initial": false
+                }
+            ]
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "transform_right_rotation_angle",
+            "label": {
+                "translate": "fdoors.extended_menu.transform.right_rotation.angle",
+                "fallback": "Transform Right Rotation Angle"
+            },
+            "start": 0,
+            "end": 360,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:text",
+            "key": "start_open_sound",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.start_open",
+                "fallback": "Start Opening Sound"
+            },
+            "initial": "",
+            "max_length": 64
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "start_open_sound_pitch",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.start_open_pitch",
+                "fallback": "Start Opening Sound Pitch"
+            },
+            "start": 0,
+            "end": 2,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "start_open_sound_volume",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.start_open_volume",
+                "fallback": "Start Opening Sound Volume"
+            },
+            "start": 0,
+            "end": 5,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:text",
+            "key": "finish_open_sound",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.finish_open",
+                "fallback": "Finish Opening Sound"
+            },
+            "initial": " ",
+            "max_length": 64
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "finish_open_sound_pitch",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.finish_open_pitch",
+                "fallback": "Finish Opening Sound Pitch"
+            },
+            "start": 0,
+            "end": 2,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "finish_open_sound_volume",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.finish_open_volume",
+                "fallback": "Finish Opening Sound Volume"
+            },
+            "start": 0,
+            "end": 5,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:text",
+            "key": "start_close_sound",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.start_close",
+                "fallback": "Start Closing Sound"
+            },
+            "initial": " ",
+            "max_length": 64
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "start_close_sound_pitch",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.start_close_pitch",
+                "fallback": "Start Closing Sound Pitch"
+            },
+            "start": 0,
+            "end": 2,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "start_close_sound_volume",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.start_close_volume",
+                "fallback": "Start Closing Sound Volume"
+            },
+            "start": 0,
+            "end": 5,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:text",
+            "key": "finish_close_sound",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.finish_close",
+                "fallback": "Finish Closing Sound"
+            },
+            "initial": " ",
+            "max_length": 64
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "finish_close_sound_pitch",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.finish_close_pitch",
+                "fallback": "Finish Closing Sound Pitch"
+            },
+            "start": 0,
+            "end": 2,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "finish_close_sound_volume",
+            "label": {
+                "translate": "fdoors.extended_menu.sound.finish_close_volume",
+                "fallback": "Finish Closing Sound Volume"
+            },
+            "start": 0,
+            "end": 5,
+            "step": 0.1,
+            "initial": 1
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "outline_color_red",
+            "label": {
+                "translate": "fdoors.extended_menu.outline_color.red",
+                "fallback": "Outline Color (Red)",
+                "color": "#ff0000"
+            },
+            "start": 0,
+            "end": 255,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "outline_color_green",
+            "label": {
+                "translate": "fdoors.extended_menu.outline_color.green",
+                "fallback": "Outline Color (Green)",
+                "color": "#00ff00"
+            },
+            "start": 0,
+            "end": 255,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:number_range",
+            "key": "outline_color_blue",
+            "label": {
+                "translate": "fdoors.extended_menu.outline_color.blue",
+                "fallback": "Outline Color (Blue)",
+                "color": "#0000ff"
+            },
+            "start": 0,
+            "end": 255,
+            "step": 1,
+            "initial": 0
+        },
+        {
+            "type": "minecraft:boolean",
+            "key": "remove_door",
+            "label": {
+                "translate": "fdoors.extended_menu.remove_door",
+                "fallback": "Remove Door",
+                "color": "red"
+            },
+            "on_true": "1",
+            "on_false": "0",
+            "initial": false
+        }
+    ],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.save",
+            "fallback": "Save"
+        },
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_left_rotation_axis: $(transform_left_rotation_axis), transform_left_rotation_angle: $(transform_left_rotation_angle), transform_right_rotation_axis: $(transform_right_rotation_axis), transform_right_rotation_angle: $(transform_right_rotation_angle), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        }
+    }
+}

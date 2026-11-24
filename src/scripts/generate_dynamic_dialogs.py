@@ -117,4 +117,6 @@ for (dirpath, dirnames, filenames) in os.walk(config_dialog_functions_dir):
 # Manually update some extra dialogs
 update_dialog_template(path.join(functions_dir, 'global_config', 'show_dialog.mcfunction'),
                        path.join(dialogs_dir, 'global_config.json'))
+update_dialog_template(path.join(functions_dir, 'dialog', 'extended_door_config.mcfunction'),
+                       path.join(dialogs_dir, 'extended_door_config.json'))
 

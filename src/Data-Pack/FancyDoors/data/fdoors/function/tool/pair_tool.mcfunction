@@ -51,4 +51,5 @@ tag @a remove fdoors.player.context
 tag @e remove fdoors.door.context
 
 # Show menu if pairing twice
-execute if score fdoors.is_pairing_twice fdoors.local matches 1 run function fdoors:menu/show_dialog
+execute if score fdoors.is_pairing_twice fdoors.local matches 1 unless score @s fdoors.extended_menu matches 1 run function fdoors:menu/show_dialog
+execute if score fdoors.is_pairing_twice fdoors.local matches 1 if score @s fdoors.extended_menu matches 1 run function fdoors:extended_menu/show_dialog
