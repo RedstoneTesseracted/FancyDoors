@@ -7,14 +7,14 @@ execute unless function fdoors:menu/mark_paired_door run return 0
 data modify storage fdoors:utility config set from entity @n[tag=fdoors.door.context,limit=1] data
 
 # Transfer values from scores to temporary storage
-execute if score @s fdoors.menu.settings.trigger matches 0 run data modify storage fdoors:utility config.trigger set value "range"
-execute if score @s fdoors.menu.settings.trigger matches 1 run data modify storage fdoors:utility config.trigger set value "block"
-execute if score @s fdoors.menu.settings.trigger matches 1 run data remove storage fdoors:utility config.trigger_args.item
-execute if score @s fdoors.menu.settings.trigger matches 2 run data modify storage fdoors:utility config.trigger set value "item"
-execute if score @s fdoors.menu.settings.trigger matches 2 run data remove storage fdoors:utility config.trigger_args.block
-execute if score @s fdoors.menu.settings.trigger matches 2 unless data storage fdoors:utility config.trigger_args.item run data modify storage fdoors:utility config.trigger_args.item set value {}
-execute store result storage fdoors:utility config.trigger_args.min int 1 run scoreboard players get @s fdoors.menu.settings.range.min
-execute store result storage fdoors:utility config.trigger_args.max int 1 run scoreboard players get @s fdoors.menu.settings.range.max
+execute if score @s fdoors.menu.settings.trigger matches 0 run data modify storage fdoors:utility config.trigger.type set value "range"
+execute if score @s fdoors.menu.settings.trigger matches 1 run data modify storage fdoors:utility config.trigger.type set value "block"
+execute unless score @s fdoors.menu.settings.trigger matches 1 run data remove storage fdoors:utility config.trigger.args.block
+execute if score @s fdoors.menu.settings.trigger matches 2 run data modify storage fdoors:utility config.trigger.type set value "item"
+execute unless score @s fdoors.menu.settings.trigger matches 2 run data remove storage fdoors:utility config.trigger.args.item
+execute if score @s fdoors.menu.settings.trigger matches 2 unless data storage fdoors:utility config.trigger.args.item run data modify storage fdoors:utility config.trigger.args.item set value {}
+execute store result storage fdoors:utility config.trigger.args.min int 1 run scoreboard players get @s fdoors.menu.settings.range.min
+execute store result storage fdoors:utility config.trigger.args.max int 1 run scoreboard players get @s fdoors.menu.settings.range.max
 execute store result storage fdoors:utility config.duration int 1 run scoreboard players get @s fdoors.menu.settings.duration
 execute store result storage fdoors:utility config.transform.translation[0] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.x
 execute store result storage fdoors:utility config.transform.translation[1] float 0.1 run scoreboard players get @s fdoors.menu.settings.transform.offset.y
@@ -76,9 +76,9 @@ execute store result storage fdoors:utility config.glow_color int 1 run scoreboa
 execute if score @s fdoors.menu.settings.item matches 2 run data modify storage fdoors:utility item set from entity @s SelectedItem
 execute if score @s fdoors.menu.settings.item matches 3 run data modify storage fdoors:utility item set from entity @s equipment.offhand
 data remove storage fdoors:utility item.count
-execute if score @s fdoors.menu.settings.item matches 2..3 run data modify storage fdoors:utility config.trigger_args.item set value {id: ""}
-execute if score @s fdoors.menu.settings.item matches 2..3 run data modify storage fdoors:utility config.trigger_args.item.id set from storage fdoors:utility item.id
-execute if score @s fdoors.menu.settings.item matches 2..3 if score @s fdoors.menu.settings.item_components matches 1 run data modify storage fdoors:utility config.trigger_args.item.components set from storage fdoors:utility item.components
+execute if score @s fdoors.menu.settings.item matches 2..3 run data modify storage fdoors:utility config.trigger.args.item set value {id: ""}
+execute if score @s fdoors.menu.settings.item matches 2..3 run data modify storage fdoors:utility config.trigger.args.item.id set from storage fdoors:utility item.id
+execute if score @s fdoors.menu.settings.item matches 2..3 if score @s fdoors.menu.settings.item_components matches 1 run data modify storage fdoors:utility config.trigger.args.item.components set from storage fdoors:utility item.components
 data remove storage fdoors:utility item
 
 # Obtain current block state if requested

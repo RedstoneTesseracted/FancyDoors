@@ -1,2 +1,2 @@
-$execute if entity @a[distance=$(min)..$(max),predicate=!fdoors:holding_selector_crossbow] run return 1
+$return run function fdoors:door/trigger/$(type) with entity @s data.trigger.args
 return 0

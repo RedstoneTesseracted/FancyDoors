@@ -47,11 +47,11 @@ scoreboard players set @s fdoors.menu.settings.color.g 99
 scoreboard players set @s fdoors.menu.settings.color.b 0
 
 # Set values if present
-execute if data storage fdoors:utility config{trigger: "range"} run scoreboard players set @s fdoors.menu.settings.trigger 0
-execute if data storage fdoors:utility config{trigger: "block"} run scoreboard players set @s fdoors.menu.settings.trigger 1
-execute if data storage fdoors:utility config{trigger: "item"} run scoreboard players set @s fdoors.menu.settings.trigger 2
-execute if data storage fdoors:utility config.trigger_args.min store result score @s fdoors.menu.settings.range.min run data get storage fdoors:utility config.trigger_args.min
-execute if data storage fdoors:utility config.trigger_args.max store result score @s fdoors.menu.settings.range.max run data get storage fdoors:utility config.trigger_args.max
+execute if data storage fdoors:utility config.trigger{type: "range"} run scoreboard players set @s fdoors.menu.settings.trigger 0
+execute if data storage fdoors:utility config.trigger{type: "block"} run scoreboard players set @s fdoors.menu.settings.trigger 1
+execute if data storage fdoors:utility config.trigger{type: "item"} run scoreboard players set @s fdoors.menu.settings.trigger 2
+execute if data storage fdoors:utility config.trigger.args.min store result score @s fdoors.menu.settings.range.min run data get storage fdoors:utility config.trigger.args.min
+execute if data storage fdoors:utility config.trigger.args.max store result score @s fdoors.menu.settings.range.max run data get storage fdoors:utility config.trigger.args.max
 execute if data storage fdoors:utility config.duration store result score @s fdoors.menu.settings.duration run data get storage fdoors:utility config.duration
 execute if data storage fdoors:utility config.color.r store result score @s fdoors.menu.settings.color.r run data get storage fdoors:utility config.color.r 99
 execute if data storage fdoors:utility config.color.g store result score @s fdoors.menu.settings.color.g run data get storage fdoors:utility config.color.g 99
