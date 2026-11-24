@@ -1,2 +1,2 @@
-# Alias for fdoors:global_config/show_menu
-function fdoors:global_config/show_menu
+# Alias for fdoors:global_config/show_dialog
+function fdoors:global_config/show_dialog

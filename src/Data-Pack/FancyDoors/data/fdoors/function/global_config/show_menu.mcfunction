@@ -444,7 +444,7 @@ execute if score @s fdoors.extended_menu matches 0 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     },\
@@ -455,7 +455,7 @@ execute if score @s fdoors.extended_menu matches 0 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     },\
@@ -469,7 +469,7 @@ execute if score @s fdoors.extended_menu matches 0 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     },\
@@ -480,7 +480,7 @@ execute if score @s fdoors.extended_menu matches 0 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     }\
@@ -496,7 +496,7 @@ execute if score @s fdoors.extended_menu matches 1 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     },\
@@ -507,7 +507,7 @@ execute if score @s fdoors.extended_menu matches 1 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     },\
@@ -521,7 +521,7 @@ execute if score @s fdoors.extended_menu matches 1 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     },\
@@ -532,7 +532,7 @@ execute if score @s fdoors.extended_menu matches 1 run tellraw @s \
             action: "show_text",\
             value: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu.help",\
-                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank that the default.  However, this menu breaks without operator status, and so is disabled by default."\
+                fallback: "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."\
             }\
         }\
     }\

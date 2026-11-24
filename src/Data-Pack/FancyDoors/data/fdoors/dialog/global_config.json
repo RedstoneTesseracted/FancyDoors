@@ -1,0 +1,116 @@
+{
+    "type": "minecraft:confirmation",
+    "title": {
+        "translate": "fdoors.menu.global_config.title",
+        "fallback": "Administrative Config"
+    },
+    "inputs": [
+        {
+            "type": "minecraft:boolean",
+            "key": "allow_barriers",
+            "label": {
+                "translate": "fdoors.menu.global_config.enable_barriers",
+                "fallback": "Allow Barrier Blocks",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.global_config.enable_barriers.help",
+                        "fallback": "Allow barrier blocks to be added to doors"
+                    }
+                }
+            },
+            "initial": false,
+            "on_true": "1",
+            "on_false": "0"
+        },
+        {
+            "type": "minecraft:boolean",
+            "key": "allow_bedrock",
+            "label": {
+                "translate": "fdoors.menu.global_config.enable_bedrock",
+                "fallback": "Allow Bedrock",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.global_config.enable_bedrock.help",
+                        "fallback": "Allow bedrock to be added to doors"
+                    }
+                }
+            },
+            "initial": false,
+            "on_true": "1",
+            "on_false": "0"
+        },
+        {
+            "type": "minecraft:boolean",
+            "key": "allow_block_entities",
+            "label": {
+                "translate": "fdoors.menu.global_config.enable_block_entities",
+                "fallback": "Allow Block Entities",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.global_config.enable_block_entities.help",
+                        "fallback": "Allow block entities to be added to doors.\nWARNING: Block entity data is lost every time it moves with the door!"
+                    }
+                }
+            },
+            "initial": false,
+            "on_true": "1",
+            "on_false": "0"
+        },
+        {
+            "type": "minecraft:boolean",
+            "key": "enable_welcome_message",
+            "label": {
+                "translate": "fdoors.menu.global_config.enable_welcome_message",
+                "fallback": "Show Welcome Message",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.global_config.enable_welcome_message.help",
+                        "fallback": "Show a welcome message for all new players that log in"
+                    }
+                }
+            },
+            "initial": false,
+            "on_true": "1",
+            "on_false": "0"
+        },
+        {
+            "type": "minecraft:boolean",
+            "key": "enable_extended_menu",
+            "label": {
+                "translate": "fdoors.menu.global_config.enable_extended_menu",
+                "fallback": "Use Extended Menu",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.global_config.enable_extended_menu.help",
+                        "fallback": "Switch to an alternative door configuration menu for this player only.  The alternative menu is both more powerful and less jank than the default.  However, this menu breaks without operator status, so it is disabled by default."
+                    }
+                }
+            },
+            "initial": false,
+            "on_true": "1",
+            "on_false": "0"
+        }
+    ],
+    "can_close_with_escape": true,
+    "yes": {
+        "label": {
+            "translate": "fdoors.menu.save",
+            "fallback": "Save"
+        },
+        "action": {
+            "type": "minecraft:dynamic/run_command",
+            "template": "function fdoors:global_config/apply {allow_barriers: $(allow_barriers), allow_bedrock: $(allow_bedrock), allow_block_entities: $(allow_block_entities), enable_welcome_message: $(enable_welcome_message), enable_extended_menu: $(enable_extended_menu)}"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "fdoors.menu.cancel",
+            "fallback": "Cancel"
+        }
+    }
+}
