@@ -8,4 +8,4 @@ tag @s add fdoors.menu.open
 scoreboard players set @s fdoors.menu.settings.trigger 1
 
 # Show dialog
-dialog show @s fdoors:door_config/trigger_block
+execute unless function fdoors:dialog/door_config/trigger_block run function fdoors:menu/door_config/panic/macro

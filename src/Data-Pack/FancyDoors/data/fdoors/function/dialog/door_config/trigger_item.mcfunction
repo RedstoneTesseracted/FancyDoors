@@ -55,7 +55,7 @@ data modify storage fdoors:menu menu.build set value {\
                         translate: "fdoors.menu.trigger.item.opt1",\
                         fallback: "No change"\
                     },\
-                    initial: true\
+                    initial: false\
                 },\
                 {\
                     id: "2",\
@@ -89,7 +89,7 @@ data modify storage fdoors:menu menu.build set value {\
                     }\
                 }\
             },\
-            initial: true,\
+            initial: false,\
             on_false: "0",\
             on_true: "1"\
         }\
@@ -124,7 +124,7 @@ data modify storage fdoors:menu menu.build set value {\
             },\
             action: {\
                 type: "minecraft:dynamic/run_command",\
-                template: "trigger fdoors.menu.item set $(min)1$(max)$(set)$(opt)"\
+                template: "trigger fdoors.menu.item set $(min)0$(max)$(set)$(opt)"\
             }\
         }\
     ]\
@@ -134,6 +134,11 @@ data modify storage fdoors:menu menu.build set value {\
 # Populate initial value(s)
 execute store result storage fdoors:menu menu.build.inputs[0].initial int 1 run scoreboard players get @s fdoors.menu.settings.range.min
 execute store result storage fdoors:menu menu.build.inputs[1].initial int 1 run scoreboard players get @s fdoors.menu.settings.range.max
+execute if score @s fdoors.menu.settings.item matches 1 run data modify storage fdoors:menu menu.build.inputs[2].options[0].initial set value true
+execute if score @s fdoors.menu.settings.item matches 2 run data modify storage fdoors:menu menu.build.inputs[2].options[1].initial set value true
+execute if score @s fdoors.menu.settings.item matches 3 run data modify storage fdoors:menu menu.build.inputs[2].options[2].initial set value true
+execute if score @s fdoors.menu.settings.item_components matches 0 run data modify storage fdoors:menu menu.build.inputs[3].initial set value false
+execute if score @s fdoors.menu.settings.item_components matches 1 run data modify storage fdoors:menu menu.build.inputs[3].initial set value true
 
 # Show dialog
 data modify storage fdoors:menu panic.context set value "fdoors:dialog/door_config/trigger_item"

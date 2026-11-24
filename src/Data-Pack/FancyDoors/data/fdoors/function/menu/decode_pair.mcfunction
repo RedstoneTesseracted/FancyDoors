@@ -3,12 +3,14 @@
 # To get around this, some dialogs encode pairs of integers using the pattern:
 #   $(x)0$(y)
 #
+#   Where $(x) and $(y) are 1-2 digit numbers
+#
 # This function is used to parse said representation into two separate scoreboard values using
 # the following procedure:
 #
 # 1) If ten's place is 0, integer divide by 100 to get the first number.
 #    Then, multiply the above by 100 and subtract from the original value to get the second number.
-# 2) If then's place is NOT 0, integer divide by 1000 to get the first number.
+# 2) If ten's place is NOT 0, integer divide by 1000 to get the first number.
 #    Then, multiply the above by 1000 and subtract from the original value to get the second number.
 #
 # To use this function, set fdoors.input's fdoors.local score to the input value.

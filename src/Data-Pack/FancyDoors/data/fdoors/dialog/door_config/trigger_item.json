@@ -50,7 +50,7 @@
                         "translate": "fdoors.menu.trigger.item.opt1",
                         "fallback": "No change"
                     },
-                    "initial": true
+                    "initial": false
                 },
                 {
                     "id": "2",
@@ -84,7 +84,7 @@
                     }
                 }
             },
-            "initial": true,
+            "initial": false,
             "on_false": "0",
             "on_true": "1"
         }
@@ -119,7 +119,7 @@
             },
             "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "trigger fdoors.menu.item set $(min)1$(max)$(set)$(opt)"
+                "template": "trigger fdoors.menu.item set $(min)0$(max)$(set)$(opt)"
             }
         }
     ]
