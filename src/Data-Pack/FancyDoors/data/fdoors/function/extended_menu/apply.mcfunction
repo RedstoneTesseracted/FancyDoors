@@ -45,7 +45,7 @@ execute if score fdoors.remove_door fdoors.local matches 1 as @n[tag=fdoors.door
 execute if score fdoors.remove_door fdoors.local matches 1 run return 0
 
 # Build data to be merged
-data modify storage fdoors:utility merged_config set from entity @n[tag=fdoors.door.base.context] data
+data modify storage fdoors:utility merged_config set value {trigger: {type: "", args: {}}, transform: {}, sounds: {}, color: {r: 0.0d, g: 0.0d, b: 0.0d}}
 $data modify storage fdoors:utility merged_config.duration set value $(duration)
 $data modify storage fdoors:utility merged_config.trigger.type set value $(trigger_type)
 $data modify storage fdoors:utility merged_config.trigger.args.min set value $(trigger_range_min)
@@ -61,7 +61,6 @@ $data modify storage fdoors:utility merged_config.sounds.start_open set value {s
 $data modify storage fdoors:utility merged_config.sounds.finish_open set value {sound: "$(finish_open_sound)", pitch: $(finish_open_sound_pitch), volume: $(finish_open_sound_volume)}
 $data modify storage fdoors:utility merged_config.sounds.start_close set value {sound: "$(start_close_sound)", pitch: $(start_close_sound_pitch), volume: $(start_close_sound_volume)}
 $data modify storage fdoors:utility merged_config.sounds.finish_close set value {sound: "$(finish_close_sound)", pitch: $(finish_close_sound_pitch), volume: $(finish_close_sound_volume)}
-data modify storage fdoors:utility merged_config.color set value {r: 0.0, g: 0.0, b: 1.0}
 
 # Handle special values
 # Optionally set components from main hand/offhand
@@ -85,7 +84,7 @@ execute store result storage fdoors:utility merged_config.color.g float 0.003921
 execute store result storage fdoors:utility merged_config.color.b float 0.00392156862745098 run scoreboard players get fdoors.color.blue fdoors.local
 
 # Write to door entity and do some last-minute clean up
-#data modify entity @n[tag=fdoors.door.base.context] data merge from storage fdoors:utility merged_config
-#execute as @n[tag=fdoors.door.base.context] unless data entity @s data.trigger{type: "item"} run data remove entity @s data.trigger.args.item
-#execute as @n[tag=fdoors.door.base.context] unless data entity @s data.trigger{type: "block"} run data remove entity @s data.trigger.args.block
-tag @e[tag=fdoors.door.base.context] remove fdoors.door.base.context
+data modify entity @n[tag=fdoors.door.context] data merge from storage fdoors:utility merged_config
+execute as @n[tag=fdoors.door.context] unless data entity @s data.trigger{type: "item"} run data remove entity @s data.trigger.args.item
+execute as @n[tag=fdoors.door.context] unless data entity @s data.trigger{type: "block"} run data remove entity @s data.trigger.args.block
+tag @e[tag=fdoors.door.context] remove fdoors.door.context
