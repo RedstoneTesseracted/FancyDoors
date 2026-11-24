@@ -16,10 +16,11 @@ execute if score fdoors.enable_welcome_message fdoors.config matches 1 run tellr
     {\
         translate: "fdoors.messages.welcome",\
         color: gold,\
-        fallback: "Welcome to Redstone⁴'s 𝓕𝓪𝓷𝓬𝔂 𝓓𝓸𝓸𝓻𝓼!  To get started, craft a %1$s and a %2$s.",\
+        fallback: "Welcome to Redstone⁴'s 𝓕𝓪𝓷𝓬𝔂 𝓓𝓸𝓸𝓻𝓼!  To get started, craft a %1$s and a %2$s.  For additional configuration options, run %3$s",\
         with: [\
             {translate: "fdoors.item.block_tool", color: "light_purple", fallback: "Block Selector"},\
-            {translate: "fdoors.item.door_controller", color: "light_purple", fallback: "Door Controller"}\
+            {translate: "fdoors.item.door_controller", color: "light_purple", fallback: "Door Controller"},\
+            {text: "/function fdoors:configure", color: "green", underlined: true, click_event: {action: "suggest_command", command: "/function fdoors:configure"}}\
         ]\
     }\
 ]
