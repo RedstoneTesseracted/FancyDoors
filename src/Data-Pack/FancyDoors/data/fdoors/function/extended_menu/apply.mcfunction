@@ -83,6 +83,13 @@ execute store result storage fdoors:utility merged_config.color.r float 0.003921
 execute store result storage fdoors:utility merged_config.color.g float 0.00392156862745098 run scoreboard players get fdoors.color.green fdoors.local
 execute store result storage fdoors:utility merged_config.color.b float 0.00392156862745098 run scoreboard players get fdoors.color.blue fdoors.local
 
+scoreboard players operation fdoors.glow_color fdoors.local = fdoors.color.red fdoors.local
+scoreboard players operation fdoors.glow_color fdoors.local *= 256 fdoors.number
+scoreboard players operation fdoors.glow_color fdoors.local += fdoors.color.green fdoors.local
+scoreboard players operation fdoors.glow_color fdoors.local *= 256 fdoors.number
+scoreboard players operation fdoors.glow_color fdoors.local += fdoors.color.blue fdoors.local
+execute store result storage fdoors:utility merged_config.glow_color int 1 run scoreboard players get fdoors.glow_color fdoors.local
+
 # Write to door entity and do some last-minute clean up
 data modify entity @n[tag=fdoors.door.context] data merge from storage fdoors:utility merged_config
 execute as @n[tag=fdoors.door.context] unless data entity @s data.trigger{type: "item"} run data remove entity @s data.trigger.args.item
