@@ -566,7 +566,7 @@ execute if score fdoors.value fdoors.local matches ..0 run scoreboard players se
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "start_open_sound_pitch"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
 # sounds.start_open.volume
-execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.start_open.pitch 10
+execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.start_open.volume 10
 execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "start_open_sound_volume"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
@@ -578,7 +578,7 @@ execute if score fdoors.value fdoors.local matches ..0 run scoreboard players se
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "finish_open_sound_pitch"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
 # sounds.finish_open.volume
-execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.finish_open.pitch 10
+execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.finish_open.volume 10
 execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "finish_open_sound_volume"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
@@ -590,7 +590,7 @@ execute if score fdoors.value fdoors.local matches ..0 run scoreboard players se
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "start_close_sound_pitch"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
 # sounds.start_close.volume
-execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.start_close.pitch 10
+execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.start_close.volume 10
 execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "start_close_sound_volume"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
@@ -602,7 +602,7 @@ execute if score fdoors.value fdoors.local matches ..0 run scoreboard players se
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "finish_close_sound_pitch"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
 # sounds.finish_close.volume
-execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.finish_close.pitch 10
+execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.sounds.finish_close.volume 10
 execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
 execute if score fdoors.value fdoors.local matches 20.. run scoreboard players set fdoors.value fdoors.local 20
 execute store result storage fdoors:menu menu.build.inputs[{key: "finish_close_sound_volume"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
