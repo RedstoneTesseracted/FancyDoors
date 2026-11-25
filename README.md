@@ -17,8 +17,6 @@ This menu allows an operator to toggle:
 * Hiding the first-time welcome message
 * Toggling between an operator-only and a non-operator door configuration dialog
 
-To disable recipes for the door controller and block selector, delete the `FancyDoors/data/fdoors_survival` folder from the pack.
-
 
 # Usage Guide
 
