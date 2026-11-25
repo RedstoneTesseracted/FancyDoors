@@ -84,6 +84,24 @@ data modify storage fdoors:menu menu.build set value {\
         },\
         {\
             type: "minecraft:boolean",\
+            key: "regenerate_doors",\
+            label: {\
+                translate: "fdoors.menu.global_config.regenerate_doors",\
+                fallback: "Regenerate Doors",\
+                hover_event: {\
+                    action: "show_text",\
+                    value: {\
+                        translate: "fdoors.menu.global_config.regenerate_doors.help",\
+                        fallback: "Whether to forcibly replace blocks that don't match the door when opening or closing"\
+                    }\
+                }\
+            },\
+            initial: false,\
+            on_true: "1",\
+            on_false: "0"\
+        },\
+        {\
+            type: "minecraft:boolean",\
             key: "enable_extended_menu",\
             label: {\
                 translate: "fdoors.menu.global_config.enable_extended_menu",\
@@ -109,7 +127,7 @@ data modify storage fdoors:menu menu.build set value {\
         },\
         action: {\
             type: "minecraft:dynamic/run_command",\
-            template: "function fdoors:global_config/apply {allow_barriers: $(allow_barriers), allow_bedrock: $(allow_bedrock), allow_block_entities: $(allow_block_entities), enable_welcome_message: $(enable_welcome_message), enable_extended_menu: $(enable_extended_menu)}"\
+            template: "function fdoors:global_config/apply {allow_barriers: $(allow_barriers), allow_bedrock: $(allow_bedrock), allow_block_entities: $(allow_block_entities), enable_welcome_message: $(enable_welcome_message), regenerate_doors: $(regenerate_doors), enable_extended_menu: $(enable_extended_menu)}"\
         }\
     },\
     no: {\
@@ -122,11 +140,12 @@ data modify storage fdoors:menu menu.build set value {\
 # <END AUTO-GENERATED BLOCK>
 
 # Populate initial value(s)
-execute store result storage fdoors:menu menu.build.inputs[0].initial int 1 run scoreboard players get fdoors.enable_barriers fdoors.config
-execute store result storage fdoors:menu menu.build.inputs[1].initial int 1 run scoreboard players get fdoors.enable_bedrock fdoors.config
-execute store result storage fdoors:menu menu.build.inputs[2].initial int 1 run scoreboard players get fdoors.enable_block_entities fdoors.config
-execute store result storage fdoors:menu menu.build.inputs[3].initial int 1 run scoreboard players get fdoors.enable_welcome_message fdoors.config
-execute store result storage fdoors:menu menu.build.inputs[4].initial int 1 run scoreboard players get @s fdoors.extended_menu
+execute store result storage fdoors:menu menu.build.inputs[{key: "allow_barriers"}].initial int 1 run scoreboard players get fdoors.enable_barriers fdoors.config
+execute store result storage fdoors:menu menu.build.inputs[{key: "allow_bedrock"}].initial int 1 run scoreboard players get fdoors.enable_bedrock fdoors.config
+execute store result storage fdoors:menu menu.build.inputs[{key: "allow_block_entities"}].initial int 1 run scoreboard players get fdoors.enable_block_entities fdoors.config
+execute store result storage fdoors:menu menu.build.inputs[{key: "regenerate_doors"}].initial int 1 run scoreboard players get fdoors.regenerate_doors fdoors.config
+execute store result storage fdoors:menu menu.build.inputs[{key: "enable_welcome_message"}].initial int 1 run scoreboard players get fdoors.enable_welcome_message fdoors.config
+execute store result storage fdoors:menu menu.build.inputs[{key: "enable_extended_menu"}].initial int 1 run scoreboard players get @s fdoors.extended_menu
 
 # Show dialog
 data modify storage fdoors:menu panic.context set value "fdoors:global_config/show_dialog"

@@ -79,6 +79,24 @@
         },
         {
             "type": "minecraft:boolean",
+            "key": "regenerate_doors",
+            "label": {
+                "translate": "fdoors.menu.global_config.regenerate_doors",
+                "fallback": "Regenerate Doors",
+                "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                        "translate": "fdoors.menu.global_config.regenerate_doors.help",
+                        "fallback": "Whether to forcibly replace blocks that don't match the door when opening or closing"
+                    }
+                }
+            },
+            "initial": false,
+            "on_true": "1",
+            "on_false": "0"
+        },
+        {
+            "type": "minecraft:boolean",
             "key": "enable_extended_menu",
             "label": {
                 "translate": "fdoors.menu.global_config.enable_extended_menu",
@@ -104,7 +122,7 @@
         },
         "action": {
             "type": "minecraft:dynamic/run_command",
-            "template": "function fdoors:global_config/apply {allow_barriers: $(allow_barriers), allow_bedrock: $(allow_bedrock), allow_block_entities: $(allow_block_entities), enable_welcome_message: $(enable_welcome_message), enable_extended_menu: $(enable_extended_menu)}"
+            "template": "function fdoors:global_config/apply {allow_barriers: $(allow_barriers), allow_bedrock: $(allow_bedrock), allow_block_entities: $(allow_block_entities), enable_welcome_message: $(enable_welcome_message), regenerate_doors: $(regenerate_doors), enable_extended_menu: $(enable_extended_menu)}"
         }
     },
     "no": {
