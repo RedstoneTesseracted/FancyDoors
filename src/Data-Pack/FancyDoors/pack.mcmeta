@@ -4,5 +4,21 @@
       "min_format": 121,
       "max_format": 121,
       "description": [{"text":"Redstone⁴'s","color":"red"},{"text":" 𝓯𝓪𝓷𝓬𝔂 𝓭𝓸𝓸𝓻𝓼","color":"green"}]
+   },
+   "overlays": {
+      "entries": [
+         {
+            "min_format": 1,
+            "max_format": 120,
+            "formats": [1, 120],
+            "directory": "old_unsupported_version"
+         },
+         {
+            "min_format": 122,
+            "max_format": 1024,
+            "formats": [122, 1024],
+            "directory": "future_unsupported_version"
+         }
+      ]
    }
 }

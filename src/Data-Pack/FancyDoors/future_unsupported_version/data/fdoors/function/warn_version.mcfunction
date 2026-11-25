@@ -1,0 +1,1 @@
+tellraw @a {translate: "fdoors.message.old_version_warn", fallback: "[𝓕𝓪𝓷𝓬𝔂 𝓓𝓸𝓸𝓻𝓼] Warning: you are playing on an older game version this pack hasn't been tested with.  You may experience bugs!", color: "red"}
