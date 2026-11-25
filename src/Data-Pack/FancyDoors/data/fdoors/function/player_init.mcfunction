@@ -25,9 +25,9 @@ execute if score fdoors.enable_welcome_message fdoors.config matches 1 run tellr
     }\
 ]
 
-# Grant recipes
-recipe give @s fdoors:block_selector
-recipe give @s fdoors:door_controller
-
 # Set default scores
 execute unless score @s fdoors.extended_menu matches -2147483648..2147483647 run scoreboard players set @s fdoors.extended_menu 0
+
+# Grant recipes
+recipe give @s fdoors_survival:block_selector
+recipe give @s fdoors_survival:door_controller
