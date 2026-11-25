@@ -2,7 +2,7 @@
 
 This datapack adds tools for building smooth-moving doors using block displays.
 
-![Door opening example](images/door_opening_preview.mkv)
+![Door opening example](images/door_opening_preview.gif)
 
 
 # Configuration
