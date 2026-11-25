@@ -15,8 +15,8 @@
 # ✔transform_scale_x
 # ✔transform_scale_y
 # ✔transform_scale_z
-# transform_yaw
-# transform_pitch
+# ✔transform_yaw
+# ✔transform_pitch
 # ✔start_open_sound
 # ✔start_open_sound_pitch
 # ✔start_open_sound_volume
@@ -49,6 +49,7 @@ $data modify storage fdoors:utility merged_config.trigger.type set value $(trigg
 $data modify storage fdoors:utility merged_config.trigger.args.min set value $(trigger_range_min)
 $data modify storage fdoors:utility merged_config.trigger.args.max set value $(trigger_range_max)
 $data modify storage fdoors:utility merged_config.trigger.args.block set value "$(trigger_block)"
+$data modify storage fdoors:utility merged_config.trigger.args.predicate set value "$(trigger_predicate)"
 $execute unless data storage fdoors:utility merged_config.trigger.args.item.id run data modify storage fdoors:utility merged_config.trigger.args.item set value {id: "$(trigger_item)"}
 $execute if data storage fdoors:utility merged_config.trigger.args.item.id run data modify storage fdoors:utility merged_config.trigger.args.item.id set value "$(trigger_item)"
 $data modify storage fdoors:utility merged_config.transform.translation set value [$(transform_offset_x), $(transform_offset_y), $(transform_offset_z)]
@@ -86,4 +87,5 @@ execute store result storage fdoors:utility merged_config.glow_color int 1 run s
 data modify entity @n[tag=fdoors.door.context] data merge from storage fdoors:utility merged_config
 execute as @n[tag=fdoors.door.context] unless data entity @s data.trigger{type: "item"} run data remove entity @s data.trigger.args.item
 execute as @n[tag=fdoors.door.context] unless data entity @s data.trigger{type: "block"} run data remove entity @s data.trigger.args.block
+execute as @n[tag=fdoors.door.context] unless data entity @s data.trigger{type: "predicate"} run data remove entity @s data.trigger.args.predicate
 tag @e[tag=fdoors.door.context] remove fdoors.door.context

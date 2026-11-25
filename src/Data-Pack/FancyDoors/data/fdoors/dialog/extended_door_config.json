@@ -167,6 +167,7 @@
                     }
                 }
             },
+            "max_length": 128,
             "initial": ""
         },
         {
@@ -473,7 +474,7 @@
         },
         "action": {
             "type": "minecraft:dynamic/run_command",
-            "template": "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_yaw: $(transform_yaw), transform_pitch: $(transform_pitch), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"
+            "template": "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), trigger_predicate: \"$(trigger_predicate)\", duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_yaw: $(transform_yaw), transform_pitch: $(transform_pitch), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"
         }
     },
     "no": {
