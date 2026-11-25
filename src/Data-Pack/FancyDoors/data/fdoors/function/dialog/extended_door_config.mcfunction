@@ -259,36 +259,11 @@ data modify storage fdoors:menu menu.build set value {\
             initial: 1\
         },\
         {\
-            type: "minecraft:single_option",\
-            key: "transform_left_rotation_axis",\
-            label: {\
-                translate: "fdoors.extended_menu.transform.left_rotation.axis",\
-                fallback: "Transform Left Rotation Axis"\
-            },\
-            options: [\
-                {\
-                    id: "x",\
-                    display: "X",\
-                    initial: false\
-                },\
-                {\
-                    id: "y",\
-                    display: "Y",\
-                    initial: false\
-                },\
-                {\
-                    id: "z",\
-                    display: "Z",\
-                    initial: false\
-                }\
-            ]\
-        },\
-        {\
             type: "minecraft:number_range",\
-            key: "transform_left_rotation_angle",\
+            key: "transform_yaw",\
             label: {\
-                translate: "fdoors.extended_menu.transform.left_rotation.angle",\
-                fallback: "Transform Left Rotation Angle"\
+                translate: "fdoors.extended_menu.transform.yaw",\
+                fallback: "Transform Yaw"\
             },\
             start: 0,\
             end: 360,\
@@ -296,39 +271,14 @@ data modify storage fdoors:menu menu.build set value {\
             initial: 0\
         },\
         {\
-            type: "minecraft:single_option",\
-            key: "transform_right_rotation_axis",\
-            label: {\
-                translate: "fdoors.extended_menu.transform.right_rotation.axis",\
-                fallback: "Transform Right Rotation Axis"\
-            },\
-            options: [\
-                {\
-                    id: "x",\
-                    display: "X",\
-                    initial: false\
-                },\
-                {\
-                    id: "y",\
-                    display: "Y",\
-                    initial: false\
-                },\
-                {\
-                    id: "z",\
-                    display: "Z",\
-                    initial: false\
-                }\
-            ]\
-        },\
-        {\
             type: "minecraft:number_range",\
-            key: "transform_right_rotation_angle",\
+            key: "transform_pitch",\
             label: {\
-                translate: "fdoors.extended_menu.transform.right_rotation.angle",\
-                fallback: "Transform Right Rotation Angle"\
+                translate: "fdoors.extended_menu.transform.pitch",\
+                fallback: "Transform Pitch"\
             },\
-            start: 0,\
-            end: 360,\
+            start: -90,\
+            end: 90,\
             step: 1,\
             initial: 0\
         },\
@@ -528,7 +478,7 @@ data modify storage fdoors:menu menu.build set value {\
         },\
         action: {\
             type: "minecraft:dynamic/run_command",\
-            template: "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_left_rotation_axis: $(transform_left_rotation_axis), transform_left_rotation_angle: $(transform_left_rotation_angle), transform_right_rotation_axis: $(transform_right_rotation_axis), transform_right_rotation_angle: $(transform_right_rotation_angle), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"\
+            template: "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_yaw: $(transform_yaw), transform_pitch: $(transform_pitch), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"\
         }\
     },\
     no: {\
@@ -597,24 +547,16 @@ execute store result score fdoors.value fdoors.local run data get storage fdoors
 execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
 execute if score fdoors.value fdoors.local matches 100.. run scoreboard players set fdoors.value fdoors.local 100
 execute store result storage fdoors:menu menu.build.inputs[{key: "transform_scale_z"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
-# transform.left_rotation.axis
-execute if data storage fdoors:utility config.transform.left_rotation{axis: "x"} run data modify storage fdoors:menu menu.build.inputs[{key: "transform_left_rotation_axis"}].options[{id: "x"}].initial set value true
-execute if data storage fdoors:utility config.transform.left_rotation{axis: "y"} run data modify storage fdoors:menu menu.build.inputs[{key: "transform_left_rotation_axis"}].options[{id: "y"}].initial set value true
-execute if data storage fdoors:utility config.transform.left_rotation{axis: "z"} run data modify storage fdoors:menu menu.build.inputs[{key: "transform_left_rotation_axis"}].options[{id: "z"}].initial set value true
-# transform.left_rotation.angle
-execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.transform.left_rotation.angle 57.29577951308232
+# transform.yaw
+execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.transform.yaw 1
 execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
 execute if score fdoors.value fdoors.local matches 360.. run scoreboard players set fdoors.value fdoors.local 360
-execute store result storage fdoors:menu menu.build.inputs[{key: "transform_left_rotation_angle"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
-# transform.right_rotation.axis
-execute if data storage fdoors:utility config.transform.right_rotation{axis: "x"} run data modify storage fdoors:menu menu.build.inputs[{key: "transform_right_rotation_axis"}].options[{id: "x"}].initial set value true
-execute if data storage fdoors:utility config.transform.right_rotation{axis: "y"} run data modify storage fdoors:menu menu.build.inputs[{key: "transform_right_rotation_axis"}].options[{id: "y"}].initial set value true
-execute if data storage fdoors:utility config.transform.right_rotation{axis: "z"} run data modify storage fdoors:menu menu.build.inputs[{key: "transform_right_rotation_axis"}].options[{id: "z"}].initial set value true
-# transform.right_rotation.angle
-execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.transform.right_rotation.angle 57.29577951308232
-execute if score fdoors.value fdoors.local matches ..0 run scoreboard players set fdoors.value fdoors.local 0
-execute if score fdoors.value fdoors.local matches 360.. run scoreboard players set fdoors.value fdoors.local 360
-execute store result storage fdoors:menu menu.build.inputs[{key: "transform_right_rotation_angle"}].initial float 0.1 run scoreboard players get fdoors.value fdoors.local
+execute store result storage fdoors:menu menu.build.inputs[{key: "transform_yaw"}].initial float 1 run scoreboard players get fdoors.value fdoors.local
+# transform.pitch
+execute store result score fdoors.value fdoors.local run data get storage fdoors:utility config.transform.pitch 1
+execute if score fdoors.value fdoors.local matches ..-90 run scoreboard players set fdoors.value fdoors.local -90
+execute if score fdoors.value fdoors.local matches 90.. run scoreboard players set fdoors.value fdoors.local 90
+execute store result storage fdoors:menu menu.build.inputs[{key: "transform_pitch"}].initial float 1 run scoreboard players get fdoors.value fdoors.local
 # sounds.start_open.sound
 data modify storage fdoors:menu menu.build.inputs[{key: "start_open_sound"}].initial set from storage fdoors:utility config.sounds.start_open.sound
 # sounds.start_open.pitch

@@ -40,8 +40,8 @@
         },
         {
             "label": {
-                "translate": "fdoors.menu.edit_left_rotation",
-                "fallback": "Left Rotation..."
+                "translate": "fdoors.menu.edit_yaw",
+                "fallback": "Yaw..."
             },
             "action": {
                 "type": "minecraft:run_command",
@@ -50,8 +50,8 @@
         },
         {
             "label": {
-                "translate": "fdoors.menu.edit_right_rotation",
-                "fallback": "Right Rotation..."
+                "translate": "fdoors.menu.edit_pitch",
+                "fallback": "Pitch..."
             },
             "action": {
                 "type": "minecraft:run_command",

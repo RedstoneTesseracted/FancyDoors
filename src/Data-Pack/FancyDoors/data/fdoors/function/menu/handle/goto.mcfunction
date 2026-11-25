@@ -15,8 +15,8 @@ execute if score @s fdoors.menu.goto matches 411 run return run function fdoors:
 execute if score @s fdoors.menu.goto matches 412 run return run function fdoors:menu/door_config/transform/offset/y
 execute if score @s fdoors.menu.goto matches 413 run return run function fdoors:menu/door_config/transform/offset/z
 execute if score @s fdoors.menu.goto matches 42 run return run function fdoors:menu/door_config/transform/scale
-execute if score @s fdoors.menu.goto matches 43 run return run function fdoors:menu/door_config/transform/left_rotation
-execute if score @s fdoors.menu.goto matches 44 run return run function fdoors:menu/door_config/transform/right_rotation
+execute if score @s fdoors.menu.goto matches 43 run return run function fdoors:menu/door_config/transform/yaw
+execute if score @s fdoors.menu.goto matches 44 run return run function fdoors:menu/door_config/transform/pitch
 execute if score @s fdoors.menu.goto matches 5 run return run function fdoors:menu/door_config/sounds
 execute if score @s fdoors.menu.goto matches 51 run return run function fdoors:menu/door_config/sounds/start_opening
 execute if score @s fdoors.menu.goto matches 52 run return run function fdoors:menu/door_config/sounds/finish_opening

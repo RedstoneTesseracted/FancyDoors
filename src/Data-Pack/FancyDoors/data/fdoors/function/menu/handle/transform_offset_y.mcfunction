@@ -1,6 +1,6 @@
 # This function is run whenever the player returns from the y-translation menu
 
-execute unless score @s fdoors.menu.transform.offset matches -1 run scoreboard players operation @s fdoors.menu.settings.transform.offset.y = @s fdoors.menu.transform.offset
+execute unless score @s fdoors.menu.transform.offset matches -2147483647 run scoreboard players operation @s fdoors.menu.settings.transform.offset.y = @s fdoors.menu.transform.offset
 tag @s remove fdoors.menu.expect.transform.translation.y
 tag @s remove fdoors.menu.open
 

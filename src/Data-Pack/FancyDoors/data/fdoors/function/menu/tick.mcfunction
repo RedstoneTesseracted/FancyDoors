@@ -72,32 +72,30 @@
 #           X (fdoors.menu.goto=411)
 #               X
 #               Set (fdoors.menu.transform.offset=$(x))
-#               Cancel (fdoors.menu.transform.offset=-1)
+#               Cancel (fdoors.menu.transform.offset=-2147483647)
 #           Y (fdoors.menu.goto=412)
 #               Y
 #               Set (fdoors.menu.transform.offset=$(x))
-#               Cancel (fdoors.menu.transform.offset=-1)
+#               Cancel (fdoors.menu.transform.offset=-2147483647)
 #           Z (fdoors.menu.goto=413)
 #               Z
 #               Set (fdoors.menu.transform.offset=$(x))
-#               Cancel (fdoors.menu.transform.offset=-1)
+#               Cancel (fdoors.menu.transform.offset=-2147483647)
 #           Back (fdoors.menu.goto=4)
 #       Scale (fdoors.menu.goto=42)
 #           X <num*10>
 #           Y <num*10>
 #           Z <num*10>
 #           Set (fdoors.menu.transform.scale=$(x)0$(y)0$(z))
-#           Cancel (fdoors.menu.transform.scale=-1)
-#       Left Rotation (fdoors.menu.goto=43)
-#           Axis [x=0|y=1|x=2]
+#           Cancel (fdoors.menu.transform.scale=-2147483647)
+#       Yaw (fdoors.menu.goto=43)
 #           Angle <num, 0-360>
-#           Set (fdoors.menu.transform.rotation=$(angle)$(axis))
-#           Cancel (fdoors.menu.transform.rotation=-1)
-#       Right Rotation (fdoors.menu.goto=44)
-#           Axis [x=0|y=1|x=2]
-#           Angle <num, 0-360>
-#           Set (fdoors.menu.transform.rotation=$(angle)$(axis))
-#           Cancel (fdoors.menu.transform.rotation=-1)
+#           Set (fdoors.menu.transform.yaw=$(angle))
+#           Cancel (fdoors.menu.transform.yaw=-2147483647)
+#       Pitch (fdoors.menu.goto=44)
+#           Angle <num, -90-90>
+#           Set (fdoors.menu.transform.pitch=$(angle))
+#           Cancel (fdoors.menu.transform.pitch=-2147483647)
 #       Back (fdoors.menu.goto=1)
 #   Sounds (fdoors.menu.goto=5)
 #       Start Open
@@ -124,8 +122,8 @@ execute if entity @s[tag=fdoors.menu.expect.transform.translation.x] unless func
 execute if entity @s[tag=fdoors.menu.expect.transform.translation.y] unless function fdoors:menu/check/transform_offset_enabled run return run function fdoors:menu/handle/transform_offset_y
 execute if entity @s[tag=fdoors.menu.expect.transform.translation.z] unless function fdoors:menu/check/transform_offset_enabled run return run function fdoors:menu/handle/transform_offset_z
 execute if entity @s[tag=fdoors.menu.expect.transform.scale] unless function fdoors:menu/check/transform_scale_enabled run return run function fdoors:menu/handle/transform_scale
-execute if entity @s[tag=fdoors.menu.expect.transform.left_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_left_rotation
-execute if entity @s[tag=fdoors.menu.expect.transform.right_rotation] unless function fdoors:menu/check/transform_rotation_enabled run return run function fdoors:menu/handle/transform_right_rotation
+execute if entity @s[tag=fdoors.menu.expect.transform.yaw] unless function fdoors:menu/check/transform_yaw_enabled run return run function fdoors:menu/handle/transform_yaw
+execute if entity @s[tag=fdoors.menu.expect.transform.pitch] unless function fdoors:menu/check/transform_pitch_enabled run return run function fdoors:menu/handle/transform_pitch
 execute if entity @s[tag=fdoors.menu.expect.color] unless function fdoors:menu/check/color_enabled run return run function fdoors:menu/handle/color
 execute if entity @s[tag=fdoors.menu.expect.destroy] unless function fdoors:menu/check/destroy_enabled run return run function fdoors:menu/handle/destroy
 execute if entity @s[tag=fdoors.menu.expect.sounds.start_opening] unless function fdoors:menu/check/sounds/start_opening run return run function fdoors:menu/handle/sounds/start_opening

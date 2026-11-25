@@ -42,10 +42,8 @@ scoreboard objectives add fdoors.menu.settings.transform.offset.z dummy
 scoreboard objectives add fdoors.menu.settings.transform.scale.x dummy
 scoreboard objectives add fdoors.menu.settings.transform.scale.y dummy
 scoreboard objectives add fdoors.menu.settings.transform.scale.z dummy
-scoreboard objectives add fdoors.menu.settings.transform.l_rotation.axis dummy
-scoreboard objectives add fdoors.menu.settings.transform.l_rotation.angle dummy
-scoreboard objectives add fdoors.menu.settings.transform.r_rotation.axis dummy
-scoreboard objectives add fdoors.menu.settings.transform.r_rotation.angle dummy
+scoreboard objectives add fdoors.menu.settings.transform.yaw dummy
+scoreboard objectives add fdoors.menu.settings.transform.pitch dummy
 scoreboard objectives add fdoors.menu.settings.color.r dummy
 scoreboard objectives add fdoors.menu.settings.color.g dummy
 scoreboard objectives add fdoors.menu.settings.color.b dummy
@@ -75,7 +73,8 @@ scoreboard objectives add fdoors.menu.item trigger
 scoreboard objectives add fdoors.menu.block trigger
 scoreboard objectives add fdoors.menu.transform.offset trigger
 scoreboard objectives add fdoors.menu.transform.scale trigger
-scoreboard objectives add fdoors.menu.transform.rotation trigger
+scoreboard objectives add fdoors.menu.transform.yaw trigger
+scoreboard objectives add fdoors.menu.transform.pitch trigger
 scoreboard objectives add fdoors.menu.color trigger
 scoreboard objectives add fdoors.menu.destroy trigger
 scoreboard objectives add fdoors.menu.sounds.start_opening trigger
@@ -97,7 +96,7 @@ scoreboard objectives add fdoors.config dummy
 execute unless score fdoors.enable_bedrock fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_bedrock fdoors.config 0
 execute unless score fdoors.enable_barriers fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_barriers fdoors.config 0
 execute unless score fdoors.enable_block_entities fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_block_entities fdoors.config 0
-execute unless score fdoors.regenerate_doors fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.regenerate_doors fdoors.config 1
+execute unless score fdoors.regenerate_doors fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.regenerate_doors fdoors.config 0
 execute unless score fdoors.enable_welcome_message fdoors.config matches -2147483648..2147483647 run scoreboard players set fdoors.enable_welcome_message fdoors.config 1
 
 # Player configuration scores

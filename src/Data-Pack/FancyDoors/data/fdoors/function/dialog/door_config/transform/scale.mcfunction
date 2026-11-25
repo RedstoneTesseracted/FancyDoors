@@ -63,7 +63,7 @@ data modify storage fdoors:menu menu.build set value {\
         },\
         action: {\
             type: "minecraft:run_command",\
-            command: "trigger fdoors.menu.transform.scale set -1"\
+            command: "trigger fdoors.menu.transform.scale set -2147483647"\
         }\
     }\
 }

@@ -22,14 +22,8 @@ execute store result storage fdoors:utility config.transform.translation[2] floa
 execute store result storage fdoors:utility config.transform.scale[0] int 0.1 run scoreboard players get @s fdoors.menu.settings.transform.scale.x
 execute store result storage fdoors:utility config.transform.scale[1] int 0.1 run scoreboard players get @s fdoors.menu.settings.transform.scale.y
 execute store result storage fdoors:utility config.transform.scale[2] int 0.1 run scoreboard players get @s fdoors.menu.settings.transform.scale.z
-execute if score @s fdoors.menu.settings.transform.l_rotation.axis matches 0 run data modify storage fdoors:utility config.transform.left_rotation.axis set value "x"
-execute if score @s fdoors.menu.settings.transform.l_rotation.axis matches 1 run data modify storage fdoors:utility config.transform.left_rotation.axis set value "y"
-execute if score @s fdoors.menu.settings.transform.l_rotation.axis matches 2 run data modify storage fdoors:utility config.transform.left_rotation.axis set value "z"
-execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 0 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "x"
-execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 1 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "y"
-execute if score @s fdoors.menu.settings.transform.r_rotation.axis matches 2 run data modify storage fdoors:utility config.transform.right_rotation.axis set value "z"
-execute store result storage fdoors:utility config.transform.left_rotation.angle float 0.017453292519943295 run scoreboard players get @s fdoors.menu.settings.transform.l_rotation.angle
-execute store result storage fdoors:utility config.transform.right_rotation.angle float 0.017453292519943295 run scoreboard players get @s fdoors.menu.settings.transform.r_rotation.angle
+execute store result storage fdoors:utility config.transform.yaw int 1 run scoreboard players get @s fdoors.menu.settings.transform.yaw
+execute store result storage fdoors:utility config.transform.pitch int 1 run scoreboard players get @s fdoors.menu.settings.transform.pitch
 execute store result storage fdoors:utility config.color.r float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.r
 execute store result storage fdoors:utility config.color.g float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.g
 execute store result storage fdoors:utility config.color.b float 0.010101010101010102 run scoreboard players get @s fdoors.menu.settings.color.b

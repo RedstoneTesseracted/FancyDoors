@@ -6,7 +6,8 @@ scoreboard players reset @s fdoors.menu.item
 scoreboard players reset @s fdoors.menu.block
 scoreboard players reset @s fdoors.menu.transform.offset
 scoreboard players reset @s fdoors.menu.transform.scale
-scoreboard players reset @s fdoors.menu.transform.rotation
+scoreboard players reset @s fdoors.menu.transform.yaw
+scoreboard players reset @s fdoors.menu.transform.pitch
 scoreboard players reset @s fdoors.menu.color
 scoreboard players reset @s fdoors.menu.destroy
 scoreboard players reset @s fdoors.menu.sounds.start_opening
@@ -21,11 +22,11 @@ tag @s remove fdoors.menu.expect.goto
 tag @s remove fdoors.menu.expect.block
 tag @s remove fdoors.menu.expect.item
 tag @s remove fdoors.menu.expect.range
-tag @s remove fdoors.menu.expect.transform.left_rotation
 tag @s remove fdoors.menu.expect.transform.translation.x
 tag @s remove fdoors.menu.expect.transform.translation.y
 tag @s remove fdoors.menu.expect.transform.translation.z
-tag @s remove fdoors.menu.expect.transform.right_rotation
+tag @s remove fdoors.menu.expect.transform.yaw
+tag @s remove fdoors.menu.expect.transform.pitch
 tag @s remove fdoors.menu.expect.transform.scale
 tag @s remove fdoors.menu.expect.color
 tag @s remove fdoors.menu.expect.destroy

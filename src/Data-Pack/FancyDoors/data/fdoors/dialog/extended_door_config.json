@@ -254,36 +254,11 @@
             "initial": 1
         },
         {
-            "type": "minecraft:single_option",
-            "key": "transform_left_rotation_axis",
-            "label": {
-                "translate": "fdoors.extended_menu.transform.left_rotation.axis",
-                "fallback": "Transform Left Rotation Axis"
-            },
-            "options": [
-                {
-                    "id": "x",
-                    "display": "X",
-                    "initial": false
-                },
-                {
-                    "id": "y",
-                    "display": "Y",
-                    "initial": false
-                },
-                {
-                    "id": "z",
-                    "display": "Z",
-                    "initial": false
-                }
-            ]
-        },
-        {
             "type": "minecraft:number_range",
-            "key": "transform_left_rotation_angle",
+            "key": "transform_yaw",
             "label": {
-                "translate": "fdoors.extended_menu.transform.left_rotation.angle",
-                "fallback": "Transform Left Rotation Angle"
+                "translate": "fdoors.extended_menu.transform.yaw",
+                "fallback": "Transform Yaw"
             },
             "start": 0,
             "end": 360,
@@ -291,39 +266,14 @@
             "initial": 0
         },
         {
-            "type": "minecraft:single_option",
-            "key": "transform_right_rotation_axis",
-            "label": {
-                "translate": "fdoors.extended_menu.transform.right_rotation.axis",
-                "fallback": "Transform Right Rotation Axis"
-            },
-            "options": [
-                {
-                    "id": "x",
-                    "display": "X",
-                    "initial": false
-                },
-                {
-                    "id": "y",
-                    "display": "Y",
-                    "initial": false
-                },
-                {
-                    "id": "z",
-                    "display": "Z",
-                    "initial": false
-                }
-            ]
-        },
-        {
             "type": "minecraft:number_range",
-            "key": "transform_right_rotation_angle",
+            "key": "transform_pitch",
             "label": {
-                "translate": "fdoors.extended_menu.transform.right_rotation.angle",
-                "fallback": "Transform Right Rotation Angle"
+                "translate": "fdoors.extended_menu.transform.pitch",
+                "fallback": "Transform Pitch"
             },
-            "start": 0,
-            "end": 360,
+            "start": -90,
+            "end": 90,
             "step": 1,
             "initial": 0
         },
@@ -523,7 +473,7 @@
         },
         "action": {
             "type": "minecraft:dynamic/run_command",
-            "template": "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_left_rotation_axis: $(transform_left_rotation_axis), transform_left_rotation_angle: $(transform_left_rotation_angle), transform_right_rotation_axis: $(transform_right_rotation_axis), transform_right_rotation_angle: $(transform_right_rotation_angle), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"
+            "template": "function fdoors:extended_menu/apply {trigger_type: $(trigger_type), trigger_range_min: $(trigger_range_min), trigger_range_max: $(trigger_range_max), trigger_block: \"$(trigger_block)\", trigger_item: \"$(trigger_item)\", trigger_item_components_set: $(trigger_item_components_set), duration: $(duration), transform_offset_x: $(transform_offset_x), transform_offset_y: $(transform_offset_y), transform_offset_z: $(transform_offset_z), transform_scale_x: $(transform_scale_x), transform_scale_y: $(transform_scale_y), transform_scale_z: $(transform_scale_z), transform_yaw: $(transform_yaw), transform_pitch: $(transform_pitch), start_open_sound: \"$(start_open_sound)\", start_open_sound_pitch: $(start_open_sound_pitch), start_open_sound_volume: $(start_open_sound_volume), finish_open_sound: \"$(finish_open_sound)\", finish_open_sound_pitch: $(finish_open_sound_pitch), finish_open_sound_volume: $(finish_open_sound_volume), start_close_sound: \"$(start_close_sound)\", start_close_sound_pitch: $(start_close_sound_pitch), start_close_sound_volume: $(start_close_sound_volume), finish_close_sound: \"$(finish_close_sound)\", finish_close_sound_pitch: $(finish_close_sound_pitch), finish_close_sound_volume: $(finish_close_sound_volume), outline_color_red: $(outline_color_red), outline_color_green: $(outline_color_green), outline_color_blue: $(outline_color_blue), remove_door: $(remove_door)}"
         }
     },
     "no": {

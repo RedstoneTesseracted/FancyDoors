@@ -11,7 +11,7 @@ tag @s remove fdoors.menu.open
 
 # Special values:
 #   -1: Discard changes and return to transform menu
-execute if score @s fdoors.menu.transform.scale matches -1 run return run function fdoors:menu/door_config/transform
+execute if score @s fdoors.menu.transform.scale matches -2147483647 run return run function fdoors:menu/door_config/transform
 
 # Parse components
 scoreboard players operation fdoors.triple.in fdoors.local = @s fdoors.menu.transform.scale

@@ -22,10 +22,8 @@ scoreboard players set @s fdoors.menu.settings.transform.offset.z 0
 scoreboard players set @s fdoors.menu.settings.transform.scale.x 10
 scoreboard players set @s fdoors.menu.settings.transform.scale.y 10
 scoreboard players set @s fdoors.menu.settings.transform.scale.z 10
-scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 0
-scoreboard players set @s fdoors.menu.settings.transform.l_rotation.angle 0
-scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 0
-scoreboard players set @s fdoors.menu.settings.transform.r_rotation.angle 0
+scoreboard players set @s fdoors.menu.settings.transform.yaw 0
+scoreboard players set @s fdoors.menu.settings.transform.pitch 0
 scoreboard players set @s fdoors.menu.settings.sounds.start_opening.pitch 10
 scoreboard players set @s fdoors.menu.settings.sounds.start_opening.volume 10
 scoreboard players set @s fdoors.menu.settings.sounds.start_opening.sound 0
@@ -62,14 +60,8 @@ execute if data storage fdoors:utility config.transform.translation[2] store res
 execute if data storage fdoors:utility config.transform.scale[0] store result score @s fdoors.menu.settings.transform.scale.x run data get storage fdoors:utility config.transform.scale[0] 10.0
 execute if data storage fdoors:utility config.transform.scale[1] store result score @s fdoors.menu.settings.transform.scale.y run data get storage fdoors:utility config.transform.scale[1] 10.0
 execute if data storage fdoors:utility config.transform.scale[2] store result score @s fdoors.menu.settings.transform.scale.z run data get storage fdoors:utility config.transform.scale[2] 10.0
-execute if data storage fdoors:utility config.transform.left_rotation{axis: "x"} run scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 0
-execute if data storage fdoors:utility config.transform.left_rotation{axis: "y"} run scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 1
-execute if data storage fdoors:utility config.transform.left_rotation{axis: "z"} run scoreboard players set @s fdoors.menu.settings.transform.l_rotation.axis 2
-execute if data storage fdoors:utility config.transform.right_rotation{axis: "x"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 0
-execute if data storage fdoors:utility config.transform.right_rotation{axis: "y"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 1
-execute if data storage fdoors:utility config.transform.right_rotation{axis: "z"} run scoreboard players set @s fdoors.menu.settings.transform.r_rotation.axis 2
-execute if data storage fdoors:utility config.transform.left_rotation.angle store result score @s fdoors.menu.settings.transform.l_rotation.angle run data get storage fdoors:utility config.transform.left_rotation.angle 57.29577951308232
-execute if data storage fdoors:utility config.transform.right_rotation.angle store result score @s fdoors.menu.settings.transform.r_rotation.angle run data get storage fdoors:utility config.transform.right_rotation.angle 57.29577951308232
+execute if data storage fdoors:utility config.transform.yaw store result score @s fdoors.menu.settings.transform.yaw run data get storage fdoors:utility config.transform.yaw
+execute if data storage fdoors:utility config.transform.pitch store result score @s fdoors.menu.settings.transform.pitch run data get storage fdoors:utility config.transform.pitch
 execute if data storage fdoors:utility config.sounds.start_open.pitch store result score @s fdoors.menu.settings.sounds.start_opening.pitch run data get storage fdoors:utility config.sounds.start_open.pitch 10.0
 execute if data storage fdoors:utility config.sounds.start_open.volume store result score @s fdoors.menu.settings.sounds.start_opening.volume run data get storage fdoors:utility config.sounds.start_open.volume 10.0
 execute if data storage fdoors:utility config.sounds.finish_open.pitch store result score @s fdoors.menu.settings.sounds.finish_opening.pitch run data get storage fdoors:utility config.sounds.finish_open.pitch 10.0

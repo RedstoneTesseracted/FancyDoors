@@ -15,10 +15,8 @@
 # ✔transform_scale_x
 # ✔transform_scale_y
 # ✔transform_scale_z
-# ✔transform_left_rotation_axis
-# ✔transform_left_rotation_angle
-# ✔transform_right_rotation_axis
-# ✔transform_right_rotation_angle
+# transform_yaw
+# transform_pitch
 # ✔start_open_sound
 # ✔start_open_sound_pitch
 # ✔start_open_sound_volume
@@ -55,8 +53,8 @@ $execute unless data storage fdoors:utility merged_config.trigger.args.item.id r
 $execute if data storage fdoors:utility merged_config.trigger.args.item.id run data modify storage fdoors:utility merged_config.trigger.args.item.id set value "$(trigger_item)"
 $data modify storage fdoors:utility merged_config.transform.translation set value [$(transform_offset_x), $(transform_offset_y), $(transform_offset_z)]
 $data modify storage fdoors:utility merged_config.transform.scale set value [$(transform_scale_x), $(transform_scale_y), $(transform_scale_z)]
-$data modify storage fdoors:utility merged_config.transform.left_rotation set value {axis: "$(transform_left_rotation_axis)", angle: 0.0}
-$data modify storage fdoors:utility merged_config.transform.right_rotation set value {axis: "$(transform_right_rotation_axis)", angle: 0.0}
+$data modify storage fdoors:utility merged_config.transform.yaw set value $(transform_yaw)
+$data modify storage fdoors:utility merged_config.transform.pitch set value $(transform_pitch)
 $data modify storage fdoors:utility merged_config.sounds.start_open set value {sound: "$(start_open_sound)", pitch: $(start_open_sound_pitch), volume: $(start_open_sound_volume)}
 $data modify storage fdoors:utility merged_config.sounds.finish_open set value {sound: "$(finish_open_sound)", pitch: $(finish_open_sound_pitch), volume: $(finish_open_sound_volume)}
 $data modify storage fdoors:utility merged_config.sounds.start_close set value {sound: "$(start_close_sound)", pitch: $(start_close_sound_pitch), volume: $(start_close_sound_volume)}
@@ -68,12 +66,6 @@ $scoreboard players set fdoors.trigger_item_components_set fdoors.local $(trigge
 execute if score fdoors.trigger_item_components_set fdoors.local matches 1 run data modify storage fdoors:utility merged_config.trigger.args.item.components set from entity @s SelectedItem.components
 execute if score fdoors.trigger_item_components_set fdoors.local matches 2 run data modify storage fdoors:utility merged_config.trigger.args.item.components set from entity @s equipment.offhand.components
 execute if score fdoors.trigger_item_components_set fdoors.local matches 3 run data remove storage fdoors:utility merged_config.trigger.args.item.components
-
-# Convert angles in degrees to radians
-$scoreboard players set fdoors.left_rotation_angle fdoors.local $(transform_left_rotation_angle)
-$scoreboard players set fdoors.right_rotation_angle fdoors.local $(transform_right_rotation_angle)
-execute store result storage fdoors:utility merged_config.transform.left_rotation.angle float 0.017453292519943295 run scoreboard players get fdoors.left_rotation_angle fdoors.local
-execute store result storage fdoors:utility merged_config.transform.right_rotation.angle float 0.017453292519943295 run scoreboard players get fdoors.right_rotation_angle fdoors.local
 
 # Convert [0, 255] color values to [0, 1]
 $scoreboard players set fdoors.color.red fdoors.local $(outline_color_red)
