@@ -1,0 +1,48 @@
+{
+    "type": "minecraft:add",
+    "inputs": [
+        {
+            "type": "minecraft:mul",
+            "inputs": [
+                {
+                    "type": "minecraft:from_int",
+                    "input": {
+                        "type": "minecraft:score",
+                        "target": {
+                            "type": "minecraft:fixed",
+                            "name": "fdoors.tick"
+                        },
+                        "score": "fdoors.local",
+                        "fallback": 0
+                    }
+                },
+                {
+                    "type": "minecraft:div",
+                    "left": {
+                        "type": "minecraft:storage",
+                        "storage": "fdoors:utility",
+                        "path": "transform.translation[0]",
+                        "fallback": 0
+                    },
+                    "right": {
+                        "type": "minecraft:from_int",
+                        "input": {
+                            "type": "minecraft:score",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "fdoors.duration"
+                            },
+                            "score": "fdoors.local"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "minecraft:storage",
+            "storage": "fdoors:utility",
+            "path": "offset.x",
+            "fallback": 0
+        }
+    ]
+}
