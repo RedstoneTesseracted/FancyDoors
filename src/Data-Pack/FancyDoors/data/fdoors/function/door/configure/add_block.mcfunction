@@ -18,6 +18,7 @@ scoreboard players reset fdoors.property_count fdoors.local
 data modify entity @s data.blocks append from storage fdoors:utility new_block
 
 # Visually show block if we're in configuration mode
+data modify storage fdoors:utility temp.glow_color set from entity @s data.glow_color
 data modify storage fdoors:utility show_block set from storage fdoors:utility new_block
 execute if entity @s[tag=fdoors.door.configure_ready] run function fdoors:door/configure/show_preview_block
 
