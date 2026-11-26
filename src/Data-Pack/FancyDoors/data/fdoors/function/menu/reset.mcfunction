@@ -36,4 +36,4 @@ tag @s remove fdoors.menu.expect.sounds.start_closing
 tag @s remove fdoors.menu.expect.sounds.finish_closing
 
 # Set configuration score default values
-execute unless score @s fdoors.extended_menu matches -2147483648..2147483647 run scoreboard players set @s fdoors.extended_menu 0
+execute unless score @s fdoors.extended_menu matches -2147483648..2147483647 run scoreboard players set @s fdoors.extended_menu 1

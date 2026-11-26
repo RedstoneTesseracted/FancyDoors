@@ -1,0 +1,32 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "player": {
+                    "minecraft:slots": {
+                        "weapon": {
+                            "predicates": {
+                                "minecraft:custom_data": {
+                                    "fdoors": {
+                                        "tool": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "entity": {
+                    "minecraft:entity_tags": {
+                        "any_of": [
+                            "fdoors.door.configure_interaction"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "fdoors:tool/pair_tool"
+    }
+}

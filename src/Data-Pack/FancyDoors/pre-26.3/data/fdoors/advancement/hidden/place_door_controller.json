@@ -1,0 +1,26 @@
+{
+    "criteria": {
+        "place_door_controller": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                            "predicates": {
+                                "minecraft:custom_data": {
+                                    "fdoors": {
+                                        "door_placer": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "fdoors:tool/place_door_controller"
+    }
+}

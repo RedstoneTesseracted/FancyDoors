@@ -1,16 +1,74 @@
 {
    "pack": {
       "pack_format": 121,
-      "min_format": 121,
+      "min_format": 80,
       "max_format": 121,
+      "supported_formats": {
+         "min_inclusive": 80,
+         "max_inclusive": 121
+      },
       "description": [{"text":"Redstone⁴'s","color":"red"},{"text":" 𝓯𝓪𝓷𝓬𝔂 𝓭𝓸𝓸𝓻𝓼","color":"green"}]
    },
    "overlays": {
       "entries": [
          {
-            "min_format": 1,
+            "min_format": 80,
+            "max_format": 80,
+            "formats": [80, 80],
+            "directory": "1.21.6"
+         },
+         {
+            "min_format": 81,
+            "max_format": 87,
+            "formats": [81, 87],
+            "directory": "1.21.7"
+         },
+         {
+            "min_format": 88,
+            "max_format": 93,
+            "formats": [88, 93],
+            "directory": "1.21.9"
+         },
+         {
+            "min_format": 94,
+            "max_format": 100,
+            "formats": [94, 100],
+            "directory": "1.21.11"
+         },
+         {
+            "min_format": 101,
+            "max_format": 106,
+            "formats": [101, 106],
+            "directory": "26.1"
+         },
+         {
+            "min_format": 107,
             "max_format": 120,
-            "formats": [1, 120],
+            "formats": [107, 120],
+            "directory": "26.2"
+         },
+         {
+            "min_format": 121,
+            "max_format": 127,
+            "formats": [121, 127],
+            "directory": "26.3"
+         },
+         {
+            "min_format": 80,
+            "max_format": 120,
+            "formats": [80, 120],
+            "directory": "pre-26.3"
+         },
+         {
+            "min_format": 80,
+            "max_format": 106,
+            "formats": [80, 106],
+            "directory": "pre-26.2"
+         },
+         {
+            "min_format": 1,
+            "max_format": 79,
+            "formats": [1, 79],
             "directory": "old_unsupported_version"
          },
          {
